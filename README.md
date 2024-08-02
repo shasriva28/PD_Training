@@ -1,3 +1,5 @@
+**DAY 1:**
+
 1. Checked and understood the OpenLANE directory structure in detail. Also, checked the pdk variant that we are using which is sky130A (sky130_fd_sc_hd) and the .ref and .tech files inside it. We will be working on **sky130nm** process node.
 
    a. libs.ref --> contains files specific to the technology.
