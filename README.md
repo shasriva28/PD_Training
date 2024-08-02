@@ -31,6 +31,9 @@
 
 5. New directory (runs) got created in our design (picorv32a) directory. Everything except tmp directory is empty as of now.
 
+   New dir path: /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs
+
+
     ![image](https://github.com/user-attachments/assets/14c2fc72-b7df-46e4-bc10-c61b0a571dbb)
 
 6. Ran the synthesis flow using command run_synthesis in the console.
