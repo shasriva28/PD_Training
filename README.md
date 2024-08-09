@@ -59,7 +59,7 @@
 
 **DAY 2:**
 
-1. **Chip Floorplanning and Powerplanning**
+**Chip Floorplanning and Powerplanning**
 
    1. Define width and height of Core and Die:
 
@@ -221,6 +221,41 @@
 5. Floorplan does not do the placement of standard cells but they are present in the lower left corner of the layout.
 
    ![image](https://github.com/user-attachments/assets/0e6563cb-f915-415d-a39d-d64d7a80280f)
+
+**Placement & Routing**
+
+1. Bind netlist with physical cells --> The netlist contains different gates and the shape of each gate defines its functionality, ex: by the shape of OR gate we understand that it will perform OR operation. But in reality, we don't have such shapes for different gates, we just have a box structure for each gate that has some width and height (physical dimension).
+
+   ![image](https://github.com/user-attachments/assets/11919e8c-2d20-49c0-b883-4bd1ca639564)
+
+   ![image](https://github.com/user-attachments/assets/e3cd10d7-ff20-4a5d-ab21-4034f67824d8)
+
+2. Placement --> Once we have given proper shapes and sizes to each gate, the next step is to take those particular shapes and sizes and place them onto the floorplan.
+
+      Till here, we have the floorplan, netlist, and physical view of the logic gates.
+
+      ![image](https://github.com/user-attachments/assets/c5815070-6e67-4179-98a2-a21e91d5274e)
+
+      Now we will do the placement of the standard cells in the floorplan.
+
+      ![image](https://github.com/user-attachments/assets/8a9dbc6c-de14-4ac7-918c-24d31a5ffb05)
+
+3. Optimize placement --> This is the stage where we estimate wire length and capacitance and, based on that, insert repeaters.
+
+   Repeaters are buffers that will recondition the original signal, make a new signal that replicates the original signal, and send it again.
+
+   So, signal integrity is maintained using repeaters but there is a loss of area. More repeaters means more area occupied by the repeaters on the floorplan but we have to live with it since we have to maintain the signal integrity.
+
+   **Note: Slew depends on the value of the capacitor, the higher the value of the capacitor --> the amount of charge required to charge the capacitor will be high and the slew will be even bad.**
+
+   ![image](https://github.com/user-attachments/assets/3cc4af3a-08e8-40f7-bac9-3c50aa9cc3df)
+
+   
+   
+
+
+
+
 
 
 
