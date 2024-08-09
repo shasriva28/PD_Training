@@ -64,8 +64,12 @@
    1. Define width and height of Core and Die:
 
       a. Take a netlist and convert the gates and flip-flops into physical dimensions (square/rectangular box).
-      
+         
+         ![image](https://github.com/user-attachments/assets/17138d7b-9cc8-471a-b9e9-1d89f1ed52bb)
+
       b. Remove all the wires and place all the gates and flipflops in a single plate (combining all of them into one physical dimension) to calculate the area occupied by the netlist on a Silicon Wafer.
+
+         ![image](https://github.com/user-attachments/assets/589005c7-a1b9-4efe-a1af-3444b0fb3920)
       
       c. Silicon Wafer contains a lot of Dies inside it and inside each Die there is a Core region.
       
@@ -152,7 +156,24 @@
 
    ![image](https://github.com/user-attachments/assets/ec4889e9-a19a-4c26-98d5-de75a8ebc21a)
 
+4. config.tcl inside the runs/latest_run will provide you the configuration taken by the flow. So, from this file, we can verify which config file switches got the highest priority.
+
+      ![image](https://github.com/user-attachments/assets/3d514f4e-d223-4363-98c1-6f9ca3021517)
+
+      We have verified the FP_CORE_UTIL and FP_IO_HMETAL, FP_IO_VMETAL from the 3 config files mentioned in point 2.
+      
+      1. FP_CORE_UTIL --> set as 50 in floorplan.tcl and 35 in sky130A_sky130A_fd_sc_hd_config.tcl (pdk specific config file)
+
+        35 got the priority.
  
+      2. FP_IO_HMETAL, FP_IO_VMETAL --> set as 4,3 in floorplan.tcl and 3,2 in config.tcl (openlane/designs/picorv32a)
+
+         Note: In this tool, whatever value we specify for HMETAL and VMETAL, +1 gets applied.
+
+         4,3 got applied means config.tcl (openlane/designs/picorv32a) got the higher priority.
+
+          ![image](https://github.com/user-attachments/assets/79fd0a1a-eb22-484d-b781-7e01b2c712e6)
+
 
 
 
