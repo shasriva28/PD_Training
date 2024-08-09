@@ -152,11 +152,13 @@
 
    In openlane flow, Horizontal metals (FP_IO_HMETAL) and Vertical metals (FP_IO_VMETAL) are 1 more than what is specified in the config file.
 
-3. Ran the floorplan stage using command run_floorplan.
+**Floorplan**
+
+1. Ran the floorplan stage using command run_floorplan.
 
    ![image](https://github.com/user-attachments/assets/ec4889e9-a19a-4c26-98d5-de75a8ebc21a)
 
-4. config.tcl inside the runs/latest_run will provide you the configuration taken by the flow. So, from this file, we can verify which config file switches got the highest priority.
+2. config.tcl inside the runs/latest_run will provide you the configuration taken by the flow. So, from this file, we can verify which config file switches got the highest priority.
 
       ![image](https://github.com/user-attachments/assets/3d514f4e-d223-4363-98c1-6f9ca3021517)
 
@@ -174,11 +176,11 @@
 
           ![image](https://github.com/user-attachments/assets/79fd0a1a-eb22-484d-b781-7e01b2c712e6)
 
-5. The floorplan stage is completed and we will look how floorplan looks like. First we will go the results/floorplan directory and we can observe the def (Design Exchange Format) file.
+3. The floorplan stage is completed and we will look how floorplan looks like. First we will go the results/floorplan directory and we can observe the def (Design Exchange Format) file.
 
-      ![image](https://github.com/user-attachments/assets/ab8e253d-f93c-4736-a335-9a7b3cc9629a)
+      ![image](https://github.com/user-attachments/assets/d7ca9362-f6b1-4a6e-ad53-91cdd4378dbf)
 
-      ![image](https://github.com/user-attachments/assets/5013d595-6faa-4933-86b0-f086b2a49e1d)
+      ![image](https://github.com/user-attachments/assets/1ba81ddb-e933-488b-a4b8-ba738c64c65d)
 
       (0 0) --> (lower left x value, lower left y value)
          
@@ -188,11 +190,11 @@
 
       So **dividing these numbers (660685 671405) by 1000 will give the dimension of the chip in micrometer.**
    
-6. To see the actual layout after the floorplan, we will use magic tool.
+4. To see the actual layout after the floorplan, we will use magic tool.
   
       To open the layout:
 
-      ![image](https://github.com/user-attachments/assets/eb4e8785-7ea5-4abb-9a4b-fabc9ee20e74)
+      ![image](https://github.com/user-attachments/assets/8954924d-8a54-47f9-a24f-f56a2cf1cd37)
 
       The layout was not in the center when we opened it. **To bring it in the center of the window**: press s on your keyboard to select the entire layout and then press v to fit it to the window.
   
@@ -206,9 +208,23 @@
 
       Now, select a pin a see on which layer it is. So after selecting type **'what'** in the tkcon window.
 
-      ![image](https://github.com/user-attachments/assets/ce0d2192-abbd-49b7-8516-07dd4dc13a71)
+      For a **horizontal pin, it came as metal 3** and for a **vertical pin, it came as metal 2** which was there in the config file.
 
-      ![image](https://github.com/user-attachments/assets/fc125e75-cb77-4478-bbbf-832499f330d6)
+      ![image](https://github.com/user-attachments/assets/6cccd79d-21b9-49f7-aa0b-8ff32354b84a)
+
+      ![image](https://github.com/user-attachments/assets/f478b9cb-0c3e-4522-9c2d-1dc42d2076a1)
+
+      ![image](https://github.com/user-attachments/assets/b122f73f-f655-471d-9040-40ecac0f9fdf)
+
+      Tap cells are meant to avoid the latch-up condition that occurs in the CMOS devices. So, basically in the tap cell, nwell in connected to the VDD and the substrate to the ground to prevent latch-up.
+
+5. Floorplan does not do the placement of standard cells but they are present in the lower left corner of the layout.
+
+   ![image](https://github.com/user-attachments/assets/0e6563cb-f915-415d-a39d-d64d7a80280f)
+
+
+
+
 
 
 
