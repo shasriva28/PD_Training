@@ -162,17 +162,59 @@
 
       We have verified the FP_CORE_UTIL and FP_IO_HMETAL, FP_IO_VMETAL from the 3 config files mentioned in point 2.
       
-      1. FP_CORE_UTIL --> set as 50 in floorplan.tcl and 35 in sky130A_sky130A_fd_sc_hd_config.tcl (pdk specific config file)
+      1. FP_CORE_UTIL --> set as 50 in floorplan.tcl and 35 in sky130A_sky130A_fd_sc_hd_config.tcl (pdk specific config file).
 
-        35 got the priority.
+         35 got the priority.
  
-      2. FP_IO_HMETAL, FP_IO_VMETAL --> set as 4,3 in floorplan.tcl and 3,2 in config.tcl (openlane/designs/picorv32a)
+      3. FP_IO_HMETAL, FP_IO_VMETAL --> set as 4,3 in floorplan.tcl and 3,2 in config.tcl (openlane/designs/picorv32a)
 
-         Note: In this tool, whatever value we specify for HMETAL and VMETAL, +1 gets applied.
+         **Note: In this tool, whatever value we specify for HMETAL and VMETAL, +1 gets applied.**
 
          4,3 got applied means config.tcl (openlane/designs/picorv32a) got the higher priority.
 
           ![image](https://github.com/user-attachments/assets/79fd0a1a-eb22-484d-b781-7e01b2c712e6)
+
+5. The floorplan stage is completed and we will look how floorplan looks like. First we will go the results/floorplan directory and we can observe the def (Design Exchange Format) file.
+
+      ![image](https://github.com/user-attachments/assets/ab8e253d-f93c-4736-a335-9a7b3cc9629a)
+
+      ![image](https://github.com/user-attachments/assets/5013d595-6faa-4933-86b0-f086b2a49e1d)
+
+      (0 0) --> (lower left x value, lower left y value)
+         
+      (660685 671405) --> (upper right x value, upper right y value)
+
+      Unit is set by --> **UNITS DISTANCE MICRONS 1000** --> this is database unit per micron, i.e., 1 micron equals 1000 database units
+
+      So **dividing these numbers (660685 671405) by 1000 will give the dimension of the chip in micrometer.**
+   
+6. To see the actual layout after the floorplan, we will use magic tool.
+  
+      To open the layout:
+
+      ![image](https://github.com/user-attachments/assets/eb4e8785-7ea5-4abb-9a4b-fabc9ee20e74)
+
+      The layout was not in the center when we opened it. **To bring it in the center of the window**: press s on your keyboard to select the entire layout and then press v to fit it to the window.
+  
+      **For zooming into a particular portion of the layout** --> First do a left mouse click and then do a right mouse click to form a box and then press z on the keyboard.
+  
+      ![image](https://github.com/user-attachments/assets/d7b00427-84c6-4e12-92c2-a17da6e43df5)
+
+      We had set the **input-output pin mode as 1 means setting the input-output pins equidistant** and we can see that the pins are equidistant in the layout.
+
+      **For selecting any object** in the layout let's say a pin, just place your cursor over it and press s on your keyboard.
+
+      Now, select a pin a see on which layer it is. So after selecting type **'what'** in the tkcon window.
+
+      ![image](https://github.com/user-attachments/assets/ce0d2192-abbd-49b7-8516-07dd4dc13a71)
+
+      ![image](https://github.com/user-attachments/assets/fc125e75-cb77-4478-bbbf-832499f330d6)
+
+
+
+
+      
+
 
 
 
