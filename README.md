@@ -250,7 +250,40 @@
 
    ![image](https://github.com/user-attachments/assets/3cc4af3a-08e8-40f7-bac9-3c50aa9cc3df)
 
+   FF1,1,2 and FF2 logics are abutted means there is no time delay between signal passed from FF1 to FF2. There are multiple reasons to do abutment, let's say this particular section of the circuit works at a very high speed and zero time delay is required, and don't want to waste delays on wires, and therefore, the abutment is done for those logics.
+
+   So, now the complete logic has been optimized based on the placement condition.
+
+   ![image](https://github.com/user-attachments/assets/bf6e972f-2fbd-48ed-9cc8-44c65338057f)
+
+
+   Next, what we have to do is we have to check whether whatever we have done is correct or not. For that since the clocks have not built yet, we have to just check the data path over here considering there are no clocks or clocks are ideal.
+
+   By ideal clock, we mean that the time required for a clock to reach any of the flip flops is zero.
+
+**Need for characterization**
+
+1. Typical IC design flow that every design needs to go through if it wants to be implemented onto a chip. So, the first step to do that is logic synthesis. If we have a functionality that is coded in the form of RTL, the first step is to convert the functionality into legal hardware is refer to as **logic synthesis.**
+
+   So, the output of logic synthesis is nothing but an arrangement of gates that will represent your original functionality that you've described using an RTL. This is the first step of an IC design flow.
+
+      ![image](https://github.com/user-attachments/assets/da60f97c-5f9f-4ae8-8f9c-de337c464a71)
+
+2. The next step after logic synthesis is floorplanning. In this step, we import the output of logic synthesis or the netlist that we get out of the logic synthesis and decide the size of the core and die. So the size of the core and die is completely dependent on the amount of gates and the shapes and sizes of the gates present in the output of the logic synthesis.
    
+3. After floorplanning, the placement stage is there, and then CTS (Clock Tree Synthesis). And then finally we have the routing stage.
+
+   ![image](https://github.com/user-attachments/assets/d67148cd-cc1a-4a52-abcc-426a6eadd8e1)
+
+  One thing is common across all the stages --> Gates or cells. Therefore, library characterization is very important and why this is so important.
+
+  This collection of gates if you place it in some area, that area is referred to as Library.
+
+  ![image](https://github.com/user-attachments/assets/3874c14f-e07b-4e40-aad2-13f4ebc9db60)
+
+
+
+
    
 
 
