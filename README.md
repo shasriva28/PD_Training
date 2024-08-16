@@ -273,13 +273,56 @@
    
 3. After floorplanning, the placement stage is there, and then CTS (Clock Tree Synthesis). And then finally we have the routing stage.
 
-   ![image](https://github.com/user-attachments/assets/d67148cd-cc1a-4a52-abcc-426a6eadd8e1)
+      ![image](https://github.com/user-attachments/assets/d67148cd-cc1a-4a52-abcc-426a6eadd8e1)
 
-  One thing is common across all the stages --> Gates or cells. Therefore, library characterization is very important and why this is so important.
+     One thing is common across all the stages --> Gates or cells. Therefore, library characterization is very important and why this is so important.
 
-  This collection of gates if you place it in some area, that area is referred to as Library.
+     This collection of gates if you place it in some area, that area is referred to as Library.
 
-  ![image](https://github.com/user-attachments/assets/3874c14f-e07b-4e40-aad2-13f4ebc9db60)
+     ![image](https://github.com/user-attachments/assets/3874c14f-e07b-4e40-aad2-13f4ebc9db60)
+
+**Placement Lab**
+
+1. We are doing a congestion-related placement, we are right now not considering the timing. We are just ensuring that the congestion is less.
+
+2. There were 3 settings for placement. Placement in Openlane occurs in 2 stages: Global placement and detail placement.
+
+   So, there are different tools to do both of these functionality.
+
+   **Global placement** --> coarse placement, no legalization happening
+
+   **What is legalization?** --> The standard cells are placed in standard cell rows, they should be exactly inside the row abutted with each other. And there should be no overlaps. Legalization is more required from a timing point of view.
+   
+   **Detail placement** --> legalization happens here
+
+3. When we do **run_placement**, first global placement happens. Global placement, the main objective is reducing the wire length. In Openlane, we use the concept of HPWL means half-perimeter wire length. Reduction of HPWL is the main focus and converging the overflow (OVFL) means a decrease in the OVFL value means the placement is going right.
+
+4. So, previously I had done till floorplan, for running the placement from the previous day's floorplan in Openlane, no need to run synthesis and floorplan again.
+   Just do the following steps:
+   a. package require openlane 0.9
+   b. prep - design <design_name> -tag <desired_tag> --> ex: prep - design picorv32A -tag 08-08_11-13
+   c. **run_placement**
+
+      ![image](https://github.com/user-attachments/assets/d2c44e8e-07ef-47aa-8a04-b5bf867919fb)
+
+
+6. Now, for opening the layout from the def file created through placement, use the same command as used for floorplan def, just replace the floorplan def with placement def.
+
+      ![image](https://github.com/user-attachments/assets/cdca67bb-8a22-48ee-897e-96204d984fd2)
+
+      ![image](https://github.com/user-attachments/assets/32330926-75ac-4b41-ab44-6d8db42823f6)
+
+7. Zoomed in and checked the standard cells have been placed in standard cells rows.
+
+   ![image](https://github.com/user-attachments/assets/8298e7a0-2e55-4bd0-a956-0aab2b21a229)
+
+**Note: Power Distribution Network gets created during floorplan but in Openlane flow right now, the order is a little different. The floorplan does not create the Power Distribution Network. Here, in Openlane flow, PDN is done post floorplan, placement, and CTS.**
+
+   
+
+      
+
+   
 
 
 
