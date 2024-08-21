@@ -1,4 +1,4 @@
-**DAY 1:**
+![image](https://github.com/user-attachments/assets/05fc3a0e-1477-4421-ae3b-06b8127783ce)**DAY 1:**
 
 1. Checked and understood the OpenLANE directory structure in detail. Also, checked the pdk variant that we are using which is sky130A (sky130_fd_sc_hd) and the .ref and .tech files inside it. We will be working on **sky130nm** process node.
 
@@ -318,7 +318,62 @@
 
 **Note: Power Distribution Network gets created during floorplan but in Openlane flow right now, the order is a little different. The floorplan does not create the Power Distribution Network. Here, in Openlane flow, PDN is done post floorplan, placement, and CTS.**
 
+**Cell Design Flow**
+
+ 1. So, we have a placed and routed design here.
+      
+    Standard cells are placed in a section called Library. Library is a place where you keep all your standard cells, macros, IPs, decaps, etc.
+    
+    ![image](https://github.com/user-attachments/assets/1eeec68b-26a9-48c8-b9e0-0155f7426335)
+
+    Library has got cells with different functionalities, different sizes, and different threshold voltages (Vt).
+
+    ![image](https://github.com/user-attachments/assets/4f539a31-c6c0-48bd-a504-3aefad25684d)
+
+2. The next step is to take one of the inverters and understand its cell design flow. This inverter has to be represented in the form of its shape, in the form of its timing behavior, in the form of its drive strength, and in the form of its power characteristics, and so on. A small inverter has to go through a typical cell design flow.
+
+      Cell design flow is divided into 3 parts:
+
+         ![image](https://github.com/user-attachments/assets/bd1b7c55-6d53-421f-9565-f72477c04730)
+
+      1. **Inputs**: inputs to design your inverter, Process design kits (pdks) provided by the foundry.
+
+            ![image](https://github.com/user-attachments/assets/a896e28b-f1eb-4718-8bfe-42cbefa2e392)
+
    
+         a. **DRC & LVS rules**: tech file --> has 5he rules like poly width, extension over active, etc.
+
+            ![image](https://github.com/user-attachments/assets/f0547965-31bb-43e1-9f7d-abae19ffd10c)
+
+         b. **SPICE models**:
+
+            ![image](https://github.com/user-attachments/assets/11482134-a868-4ea3-ba73-80f8dbf35235)
+
+         c. **Library & user-defined specs**: Cell-height, supply voltage, metal layers, pin location, drawn gate length, et
+         
+
+      2. **Design steps**:
+
+         a. **Circuit design**: implement the function and model nmos and pmos to meet the library requirement, will get the information about W/L of the nmos and pmos in this step. Once we know the value of W/L for the transistors, next step is to implement these values in the layout called as layout design. Output of the Circuit design step is **CDL (circuit description language)**
+
+            ![image](https://github.com/user-attachments/assets/68c9c05c-a50a-4a16-86b9-820fe840bb35)
+
+         b. **Layout design**: First step is to get the function implemented through the mos transistors. The next step is to get the pmos network graph and nmos network graph.
+
+            ![image](https://github.com/user-attachments/assets/3fc02d34-353d-4217-9c5f-68621738190a)
+
+            Next step is to obtain the Euler's path
+
+
+            
+
+
+      4. **Outputs**: these are actually used by the EDA tools.
+
+   
+
+     
+
 
       
 
