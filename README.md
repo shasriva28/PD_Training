@@ -434,6 +434,144 @@
    ![image](https://github.com/user-attachments/assets/c8832005-5798-4098-abb4-98906279235d)
 
 
+2. **SPICE simulations**: 350nm, 250nm mos are available.
+
+   1. Create a SPICE deck for **VTC CMOS** characteristics --> netlist 
+
+      a. When we say W/L of mos it means it is the W/L of the channel of mos.
+
+      b. In cmos, generally pmos should be wider than the nmos. **Ideally, pmos should be twice or thrice of the nmos.** But the spice deck we are creating is having nmos and pmos of the same W/L.
+
+      ![image](https://github.com/user-attachments/assets/95a38834-1418-4fcb-b0bb-f49d67186991)
+
+      M1 --> pmos, M2 --> nmos
+
+      **Syntax of Mosfet in the SPICE: M1 Drain Gate Source Substrate type W L**
+
+      ![image](https://github.com/user-attachments/assets/a5ca78d2-c533-45e0-92d6-cab4e9b72f0c)
+
+      ![image](https://github.com/user-attachments/assets/e5d8dfc6-e0ba-480d-8ac6-b39516f21f10)
+
+   2. SPICE simulation in ngspice:
+
+      Wn, Wp --> nomos and pmos channel width
+
+      Ln, Lp --> nmos and pmos channel length
+  
+      **Wn/Ln = Wp/Lp = 1.5**
+
+      ![image](https://github.com/user-attachments/assets/5e0de600-54dc-4b49-972d-5f18d45d0e2f)
+
+      **The above VTC is shifted towards the left from the centre. Why??**
+
+   3. Now, we have increased the pmos width to 0.9375 (**2.5 times of nmos channel width**) --> pmos is bigger than nmos here
+
+      **Wn/Ln = 1.5, Wp/Lp = 3.75**
+
+      ![image](https://github.com/user-attachments/assets/8c9abcd6-346f-45c0-a42d-de8e2727d7f2)
+
+      Now **the VTC is at the centre itself.**
+
+   4. Analysis of the 2 VTCs obtained in previous 2 points (2 & 3).
+
+      Shape of both the waveforms are similar --> means CMOS is a robust device, when input is low, ouput is high and vice-versa and this is for kinds of CMOS. Therefore, Cmos logic is even and **widely used for any of the logic gate designing**.
+
+      What defines the robustness of the CMOS?
+
+      1. **Switching threshold, Vm** --> point where Vin=Vout
+
+         ![image](https://github.com/user-attachments/assets/ffb1a149-deec-43a6-b0f1-428481329cf0)
+
+         This brings us to many conclusion here:
+
+         1. This area is very critical area for CMOS inverter bcoz input=output.
+
+         2. Both pmos and nmos are in saturation region in this area means both are kind of turned on that implies very high chance of leakage current. Direct current flow from power to ground means short ckt current.
+
+         3. Here, Vin = Vout, means Gate voltage = Drain voltage which means Vgs >> threshold voltage.
+
+            ![image](https://github.com/user-attachments/assets/bd8a5f7b-7fe1-4f1f-9cf2-fbee3d2b5403)
+
+         4. Devrivation of Vm: we are trying to proof robustness of switching threshold and trying to understand how does the switching threshold varies with varying pmos and nmos.
+        
+            ![image](https://github.com/user-attachments/assets/6748d31d-a839-491b-81b7-ebf5bc146dd0)
+
+
+            1. We will also do **transient analysis** here and calculate the rise and fall delay. We will plot Vin and Vout with time on x-axis.
+
+               Dynamic simulation SPICE netlist:
+
+               ![image](https://github.com/user-attachments/assets/0aaaeda3-05c1-47c8-b00c-4b660057bd4f)
+
+               ![image](https://github.com/user-attachments/assets/bec66b34-ea0c-4c70-ab92-de1163f517fc)
+
+               Rise and fall delays are calculated using the above waveform. Basically, we see at what times input and output 50% rise/fall happening and then subtract the two. 
+
+               Ex: **Rise delay = Time at Vout(50%) rise - time at Vin(50%) rise**
+
+            2. So, we have done both static and dynamic simulation for the 1st case when Wn/Ln = Wp/Lp and got the Vm from the VTC where it cuts the 45 degree line.
+           
+               ![image](https://github.com/user-attachments/assets/62901b4d-aa12-4eea-980b-63eee968a197)
+
+               
+3. **Lab steps to git clone vsdstdcelldesign**
+
+  1.  We will git clone one of the repositories that is custom made for this workshop.
+
+      Git repository link: https://github.com/nickson-jose/vsdstdcelldesign
+
+      **How to git clone**?
+
+      Click on the green Code button and then copy the URL.
+
+      ![image](https://github.com/user-attachments/assets/0792188e-23cb-447a-b2a8-7ffa6aaf0f2e)
+
+      Now use **git clone** command in the terminal and paste the link.
+
+      ![image](https://github.com/user-attachments/assets/074d1661-413c-4699-a352-854381a52973)
+
+      A new folder **vsdstdcelldesign** got created in openlane dir.
+
+      ![image](https://github.com/user-attachments/assets/61f5a8f6-aef4-41f8-a250-d5885d246c6e)
+
+      ![image](https://github.com/user-attachments/assets/fa8c82e6-6882-4d94-92b1-fa2fc3169a33)
+
+2. Now, we will open the mag file and see the different layers that are used in the building of the inverter.
+
+   Copy the tech file to this vsdstdcell design dir itself as we will be frequently using it.
+
+   ![image](https://github.com/user-attachments/assets/e8ee555d-f797-4e77-a64b-49407a3b6204)
+
+   ![image](https://github.com/user-attachments/assets/df661033-92a6-4b21-b6e0-aa7c9e57624c)
+
+
+
+      
+
+
+               
+
+
+            
+
+
+         
+
+
+      
+      
+
+
+      
+
+
+
+
+
+      
+
+
+
 
 
          
