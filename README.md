@@ -334,12 +334,9 @@
 
       Cell design flow is divided into 3 parts:
 
-         ![image](https://github.com/user-attachments/assets/bd1b7c55-6d53-421f-9565-f72477c04730)
+      ![image](https://github.com/user-attachments/assets/bd1b7c55-6d53-421f-9565-f72477c04730)
 
       1. **Inputs**: inputs to design your inverter, Process design kits (pdks) provided by the foundry.
-
-            ![image](https://github.com/user-attachments/assets/a896e28b-f1eb-4718-8bfe-42cbefa2e392)
-
    
          a. **DRC & LVS rules**: tech file --> has 5he rules like poly width, extension over active, etc.
 
@@ -376,13 +373,13 @@
 
          c. **Characterization**:
 
-               ![image](https://github.com/user-attachments/assets/5234cacf-713e-4362-9ac2-92875b5a37e1)
+            ![image](https://github.com/user-attachments/assets/5234cacf-713e-4362-9ac2-92875b5a37e1)
 
-               So, what we have till this step:  layout of buffer, description of buffer, extracted spice netlist, subckts,  nmos pmos spice models, etc.
+            So, what we have till this step:  layout of buffer, description of buffer, extracted spice netlist, subckts,  nmos pmos spice models, etc.
 
-               ![image](https://github.com/user-attachments/assets/b6d2886c-d99f-4e49-9377-ee39c6ecdcd1)
+            ![image](https://github.com/user-attachments/assets/b6d2886c-d99f-4e49-9377-ee39c6ecdcd1)
 
-               ![image](https://github.com/user-attachments/assets/df1aec31-4d71-4a5d-bff4-20242aaac85d)
+            ![image](https://github.com/user-attachments/assets/df1aec31-4d71-4a5d-bff4-20242aaac85d)
 
       3. **Outputs**: these are actually used by the EDA tools.
   
@@ -395,17 +392,17 @@
 
       a. **Timing threshold desinitions**:
 
-         ![image](https://github.com/user-attachments/assets/3804265a-eeca-4d9d-85e0-e3a1763ddd08)
+      ![image](https://github.com/user-attachments/assets/3804265a-eeca-4d9d-85e0-e3a1763ddd08)
 
       b. **Propagation delay**:
 
-         ![image](https://github.com/user-attachments/assets/c5b7442a-c240-43fe-a457-672302b99d4b)
+      ![image](https://github.com/user-attachments/assets/c5b7442a-c240-43fe-a457-672302b99d4b)
 
       c. **Transition time**:
 
-         ![image](https://github.com/user-attachments/assets/02f94740-63f8-456d-90cf-72ee61ff931c)
+      ![image](https://github.com/user-attachments/assets/02f94740-63f8-456d-90cf-72ee61ff931c)
 
-         ![image](https://github.com/user-attachments/assets/cba5b2bf-4cac-4f41-a6db-8c2e5dfa5ccf)
+      ![image](https://github.com/user-attachments/assets/cba5b2bf-4cac-4f41-a6db-8c2e5dfa5ccf)
 
       d. **Output current waveforrm**
 
