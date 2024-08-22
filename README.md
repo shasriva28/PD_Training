@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/05fc3a0e-1477-4421-ae3b-06b8127783ce)**DAY 1:**
+**DAY 1:**
 
 1. Checked and understood the OpenLANE directory structure in detail. Also, checked the pdk variant that we are using which is sky130A (sky130_fd_sc_hd) and the .ref and .tech files inside it. We will be working on **sky130nm** process node.
 
