@@ -492,7 +492,7 @@
 
             ![image](https://github.com/user-attachments/assets/bd8a5f7b-7fe1-4f1f-9cf2-fbee3d2b5403)
 
-         4. Devrivation of Vm: we are trying to proof robustness of switching threshold and trying to understand how does the switching threshold varies with varying pmos and nmos.
+         4. Derivation of Vm: we are trying to proof robustness of switching threshold and trying to understand how does the switching threshold varies with varying pmos and nmos.
         
             ![image](https://github.com/user-attachments/assets/6748d31d-a839-491b-81b7-ebf5bc146dd0)
 
@@ -516,33 +516,33 @@
                
 3. **Lab steps to git clone vsdstdcelldesign**
 
-  1.  We will git clone one of the repositories that is custom made for this workshop.
+     1.  We will git clone one of the repositories that is custom made for this workshop.
 
-      Git repository link: https://github.com/nickson-jose/vsdstdcelldesign
+         Git repository link: https://github.com/nickson-jose/vsdstdcelldesign
 
-      **How to git clone**?
+         **How to git clone**?
 
-      Click on the green Code button and then copy the URL.
+         Click on the green Code button and then copy the URL.
 
-      ![image](https://github.com/user-attachments/assets/0792188e-23cb-447a-b2a8-7ffa6aaf0f2e)
+         ![image](https://github.com/user-attachments/assets/0792188e-23cb-447a-b2a8-7ffa6aaf0f2e)
 
-      Now use **git clone** command in the terminal and paste the link.
+         Now use **git clone** command in the terminal and paste the link.
 
-      ![image](https://github.com/user-attachments/assets/074d1661-413c-4699-a352-854381a52973)
+         ![image](https://github.com/user-attachments/assets/074d1661-413c-4699-a352-854381a52973)
 
-      A new folder **vsdstdcelldesign** got created in openlane dir.
+         A new folder **vsdstdcelldesign** got created in openlane dir.
 
-      ![image](https://github.com/user-attachments/assets/61f5a8f6-aef4-41f8-a250-d5885d246c6e)
+         ![image](https://github.com/user-attachments/assets/61f5a8f6-aef4-41f8-a250-d5885d246c6e)
 
-      ![image](https://github.com/user-attachments/assets/fa8c82e6-6882-4d94-92b1-fa2fc3169a33)
+         ![image](https://github.com/user-attachments/assets/fa8c82e6-6882-4d94-92b1-fa2fc3169a33)
 
-2. Now, we will open the mag file and see the different layers that are used in the building of the inverter.
+   2. Now, we will open the mag file and see the different layers that are used in the building of the inverter.
 
-   Copy the tech file to this vsdstdcell design dir itself as we will be frequently using it.
+         Copy the tech file to this vsdstdcell design dir itself as we will be frequently using it.
+   
+         ![image](https://github.com/user-attachments/assets/e8ee555d-f797-4e77-a64b-49407a3b6204)
 
-   ![image](https://github.com/user-attachments/assets/e8ee555d-f797-4e77-a64b-49407a3b6204)
-
-   ![image](https://github.com/user-attachments/assets/df661033-92a6-4b21-b6e0-aa7c9e57624c)
+         ![image](https://github.com/user-attachments/assets/df661033-92a6-4b21-b6e0-aa7c9e57624c)
 
 
 
