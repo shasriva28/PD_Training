@@ -417,21 +417,21 @@
 
 1. In Openlane, we can do the **changes on the fly**. If suppose, we have already done the floorplan and observed a lot of congestion, we can change utilization factor even now. In our case, we have placed the IO pins equidistant, now we will be changing it to some other input output pin strategy. There are **4 strategies supported by the IO placer**.
 
-**IO placer is one of the open source EDA tool** which we used to place the IOs around the core.
+   **IO placer is one of the open source EDA tool** which we used to place the IOs around the core.
 
    a. So now check the file where this mode for IO placement is set, first checked the README.md (under **openlane/configuration** dir) where lot of switches are defined but didn't find IO mode settings so now checked the floorplan.tcl (under **openlane/configuration** dir). It is set to 1 as shown in the below image.
 
-      ![image](https://github.com/user-attachments/assets/50129e37-7e69-4deb-856d-9b633f15c767)
+   ![image](https://github.com/user-attachments/assets/50129e37-7e69-4deb-856d-9b633f15c767)
 
    b. We are setting it to 2 on the fly and then running floorplan again.
 
-      ![image](https://github.com/user-attachments/assets/55288752-127b-49f4-9704-ee1a65156bbe)
+   ![image](https://github.com/user-attachments/assets/55288752-127b-49f4-9704-ee1a65156bbe)
 
    c. Again opened the layout in Magic and the def is updated (in the same folder only where previous def was there) and the IO pin placement is changed.
 
-      ![image](https://github.com/user-attachments/assets/ac843b6b-254d-4ac1-82ce-db98a9d2383e)
+   ![image](https://github.com/user-attachments/assets/ac843b6b-254d-4ac1-82ce-db98a9d2383e)
 
-      ![image](https://github.com/user-attachments/assets/c8832005-5798-4098-abb4-98906279235d)
+   ![image](https://github.com/user-attachments/assets/c8832005-5798-4098-abb4-98906279235d)
 
 
 
