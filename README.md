@@ -298,21 +298,25 @@
 3. When we do **run_placement**, first global placement happens. Global placement, the main objective is reducing the wire length. In Openlane, we use the concept of HPWL means half-perimeter wire length. Reduction of HPWL is the main focus and converging the overflow (OVFL) means a decrease in the OVFL value means the placement is going right.
 
 4. So, previously I had done till floorplan, for running the placement from the previous day's floorplan in Openlane, no need to run synthesis and floorplan again.
+
    Just do the following steps:
+
    a. package require openlane 0.9
+
    b. prep - design <design_name> -tag <desired_tag> --> ex: prep - design picorv32A -tag 08-08_11-13
+
    c. **run_placement**
 
       ![image](https://github.com/user-attachments/assets/d2c44e8e-07ef-47aa-8a04-b5bf867919fb)
 
 
-6. Now, for opening the layout from the def file created through placement, use the same command as used for floorplan def, just replace the floorplan def with placement def.
+5. Now, for opening the layout from the def file created through placement, use the same command as used for floorplan def, just replace the floorplan def with placement def.
 
       ![image](https://github.com/user-attachments/assets/cdca67bb-8a22-48ee-897e-96204d984fd2)
 
       ![image](https://github.com/user-attachments/assets/32330926-75ac-4b41-ab44-6d8db42823f6)
 
-7. Zoomed in and checked the standard cells have been placed in standard cells rows.
+6. Zoomed in and checked the standard cells have been placed in standard cells rows.
 
    ![image](https://github.com/user-attachments/assets/8298e7a0-2e55-4bd0-a956-0aab2b21a229)
 
@@ -405,6 +409,11 @@
       ![image](https://github.com/user-attachments/assets/cba5b2bf-4cac-4f41-a6db-8c2e5dfa5ccf)
 
       d. **Output current waveforrm**
+
+
+**DAY 3**
+
+
 
          
 
