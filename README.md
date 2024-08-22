@@ -358,17 +358,68 @@
 
             ![image](https://github.com/user-attachments/assets/68c9c05c-a50a-4a16-86b9-820fe840bb35)
 
-         b. **Layout design**: First step is to get the function implemented through the mos transistors. The next step is to get the pmos network graph and nmos network graph.
+         b. **Layout design**: First step is to get the function implemented through the mos transistors. The next step is to get the pmos network graph and nmos network graph. Output of the layout design - **GDSII, LEF, extracted spice netlist/ckt**
 
             ![image](https://github.com/user-attachments/assets/3fc02d34-353d-4217-9c5f-68621738190a)
 
-            Next step is to obtain the Euler's path
+            Next step is to obtain the Euler's path.
+
+            ![image](https://github.com/user-attachments/assets/38db7e0d-7c17-4931-a3ba-270d63936432)
+
+            Once you obtain a Euler's path, draw a stick diagram out of it.
+
+            ![image](https://github.com/user-attachments/assets/6be57ed4-186b-48ea-98fa-d2c0ce0153e1)
+
+            Next step is to convert this stick diagram into a proper/typical layout according to the rules from the inputs.
+
+            Next step is to extract the parasitics and characterize them in terms of timing.
+
+         c. **Characterization**:
+
+               ![image](https://github.com/user-attachments/assets/5234cacf-713e-4362-9ac2-92875b5a37e1)
+
+               So, what we have till this step:  layout of buffer, description of buffer, extracted spice netlist, subckts,  nmos pmos spice models, etc.
+
+               ![image](https://github.com/user-attachments/assets/b6d2886c-d99f-4e49-9377-ee39c6ecdcd1)
+
+               ![image](https://github.com/user-attachments/assets/df1aec31-4d71-4a5d-bff4-20242aaac85d)
+
+      3. **Outputs**: these are actually used by the EDA tools.
+  
+
+**General Timing characterization parameters**
+
+1. **Timing Characterization**:
+
+      ![image](https://github.com/user-attachments/assets/e431c74b-78a9-4b7c-9cc3-8794e4a79db5)
+
+      a. **Timing threshold desinitions**:
+
+         ![image](https://github.com/user-attachments/assets/3804265a-eeca-4d9d-85e0-e3a1763ddd08)
+
+      b. **Propagation delay**:
+
+         ![image](https://github.com/user-attachments/assets/c5b7442a-c240-43fe-a457-672302b99d4b)
+
+      c. **Transition time**:
+
+         ![image](https://github.com/user-attachments/assets/02f94740-63f8-456d-90cf-72ee61ff931c)
+
+         ![image](https://github.com/user-attachments/assets/cba5b2bf-4cac-4f41-a6db-8c2e5dfa5ccf)
+
+      d. **Output current waveforrm**
+
+         
+
+         
 
 
-            
+         
 
 
-      4. **Outputs**: these are actually used by the EDA tools.
+         
+
+
 
    
 
