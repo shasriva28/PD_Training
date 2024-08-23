@@ -1071,9 +1071,9 @@
 
 # <h3 id="header-2-3-3"> 3. Lab introduction to Magic tool options and DRC rules </h3>
 
-	![image](https://github.com/user-attachments/assets/a402f4ab-afb1-402a-a7c8-66dc467c8626)
+![image](https://github.com/user-attachments/assets/a402f4ab-afb1-402a-a7c8-66dc467c8626)
 
-	![image](https://github.com/user-attachments/assets/bd8442e1-c742-401f-bfc2-c7e0630fd7ba)
+![image](https://github.com/user-attachments/assets/bd8442e1-c742-401f-bfc2-c7e0630fd7ba)
 
  
 
