@@ -1,4 +1,77 @@
-**DAY 1:**
+# Table of Content
+
+<div class="toc">
+	<ul>
+    		<li><a href="#header-0"> DAY 1 </a></li>
+      <ul>
+        		<li><a href="#header-0-1"> OpenLANE directory structure </a></li>
+ 		</ul>
+      <ul>
+        		<li><a href="#header-0-2"> Design preparation step </a></li>
+ 		</ul>
+      <ul>
+        		<li><a href="#header-0-3"> Review files after design prep and run synthesis </a></li>
+ 		</ul>
+      <ul>
+        		<li><a href="#header-0-4"> Review results and reports of Synthesis </a></li>
+ 		</ul>
+	</ul>
+</div>
+
+<div class="toc">
+	<ul>
+    		<li><a href="#header-1"> DAY 2 </a></li>
+      <ul>
+        		<li><a href="#header-1-1"> Chip floorplanning [Theory] </a></li>
+ 		</ul>
+      <ul>
+        		<li><a href="#header-1-2"> Chip floorplanning [Lab] </a></li>
+ 		</ul>
+      <ul>
+        		<li><a href="#header-1-3"> Placement & Routing [Theory] </a></li>
+ 		</ul>
+      <ul>
+        		<li><a href="#header-1-4"> Need for characterization </a></li>
+ 		</ul>
+      <ul>
+        		<li><a href="#header-1-5"> Placement [Lab]  </a></li>
+ 		</ul>
+      <ul>
+        		<li><a href="#header-1-6"> Cell Design Flow  </a></li>
+ 		</ul>
+      <ul>
+         <li><a href="#header-1-7"> General Timing characterization parameters </a></li>
+	</ul>
+</div>
+
+<div class="toc">
+	<ul>
+    		<li><a href="#header-2"> DAY 3 </a></li>
+      <ul>
+        		<li><a href="#header-2-1"> Labs for CMOS inverter ngspice simulations </a></li>
+ 		</ul>
+      <ul>
+        		<li><a href="#header-2-2"> Inception of Layout And CMOS fabrication process </a></li>
+ 		</ul>
+      <ul>
+        		<li><a href="#header-2-3">  </a></li>
+ 		</ul>
+      <ul>
+        		<li><a href="#header-2-4">  </a></li>
+ 		</ul>
+      <ul>
+        		<li><a href="#header-2-5">   </a></li>
+ 		</ul>
+      <ul>
+        		<li><a href="#header-2-6">   </a></li>
+ 		</ul>
+      <ul>
+         <li><a href="#header-2-7">  </a></li>
+	</ul>
+</div>
+
+# <h1 id="header-0"> DAY 1 </h1>
+# <h2 id="header-0-1"> OpenLANE directory structure  </h2>
 
 1. Checked and understood the OpenLANE directory structure in detail. Also, checked the pdk variant that we are using which is sky130A (sky130_fd_sc_hd) and the .ref and .tech files inside it. We will be working on **sky130nm** process node.
 
@@ -9,11 +82,15 @@
     ![image](https://github.com/user-attachments/assets/e94d2f48-9ee3-4225-8b43-d5f9b520ffae)
     ![image](https://github.com/user-attachments/assets/8bb31373-9baa-4829-9248-c3ddcce53638)
 
-2. Learned how to invoke the OpenLANE tool and imported all the packages required to run this flow.
+# <h2 id="header-0-2"> Design preparation step </h2>
+
+3. Learned how to invoke the OpenLANE tool and imported all the packages required to run this flow.
     
     ![image](https://github.com/user-attachments/assets/1f7d1e41-20a0-41f3-871b-eea37fd73285)
 
-3. Checked the different available designs and the design we would be running which is **picorv32a**.
+# <h2 id="header-0-3"> Review files after design prep and run synthesis </h2>
+
+5. Checked the different available designs and the design we would be running which is **picorv32a**.
   Our design (picorv32a) directory contains 3 main files:
 
     a. src --> source file (RTL verilog file and SDC would be present here)
@@ -25,22 +102,22 @@
     ![image](https://github.com/user-attachments/assets/20260212-35d6-4396-9e1b-463a5fdb1c73)
     ![image](https://github.com/user-attachments/assets/66355d93-5fab-4f1f-b555-fd343f2d8bbc)
 
-4. Set up the design before starting the flow that is design preparation before running synthesis.
+6. Set up the design before starting the flow that is design preparation before running synthesis.
 
    ![image](https://github.com/user-attachments/assets/5c4315d6-915a-45ee-b8a4-fcad08d4bb34)
 
-5. New directory (runs) got created in our design (picorv32a) directory. Everything except tmp directory is empty as of now.
+7. New directory (runs) got created in our design (picorv32a) directory. Everything except tmp directory is empty as of now.
 
    New dir path: /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs
 
 
     ![image](https://github.com/user-attachments/assets/14c2fc72-b7df-46e4-bc10-c61b0a571dbb)
 
-6. Ran the synthesis flow using command run_synthesis in the console.
+8. Ran the synthesis flow using command run_synthesis in the console.
 
     ![image](https://github.com/user-attachments/assets/d01bf73e-ae81-4b90-994b-01c7ac299748)
 
-7. **Task: Find the flop ratio.**
+9. **Task: Find the flop ratio.**
 
     Flop ratio = Number of D Flip Flop/ Total number of cells
    
@@ -52,14 +129,16 @@
 
     ![image](https://github.com/user-attachments/assets/fbb97068-d74c-488e-af74-3fcb979feef6)
 
-8. Checked the results and reports folders for synthesis. We can see the synthesized netlist present in the results and various reports were generated such as synthesis statistics report, sta report, etc.
+# <h2 id="header-0-4"> Review results and reports of Synthesis </h2>
+
+11. Checked the results and reports folders for synthesis. We can see the synthesized netlist present in the results and various reports were generated such as synthesis statistics report, sta report, etc.
 
     ![image](https://github.com/user-attachments/assets/0958b212-3420-413b-81cb-9d120d60f362)
 
 
-**DAY 2:**
+# <h1 id="header-1"> DAY 2 </h1>
 
-**Chip Floorplanning and Powerplanning**
+# <h2 id="header-1-1">  Chip floorplanning [Theory] </h2>
 
    1. Define width and height of Core and Die:
 
@@ -126,7 +205,7 @@
       b. Logical cell placement blockage: we block the area between core and die to avoid placement of any logical cells in those areas by automated placement and routing tools because that area is reserve for the pin locations.
 
 
-**   LAB**
+# <h2 id="header-1-2">  Chip floorplanning [Lab] </h2>
 
 1. In OpenLANE, we have a lot of switches (variables/options/settings) for each step (synthesis, floorplan, placement, etc) to adjust the flow that is present in README.md inside the configuration dir of OpenLANE.
 
@@ -222,7 +301,7 @@
 
    ![image](https://github.com/user-attachments/assets/0e6563cb-f915-415d-a39d-d64d7a80280f)
 
-**Placement & Routing**
+# <h2 id="header-1-3"> Placement & Routing [Theory] </h2>
 
 1. Bind netlist with physical cells --> The netlist contains different gates and the shape of each gate defines its functionality, ex: by the shape of OR gate we understand that it will perform OR operation. But in reality, we don't have such shapes for different gates, we just have a box structure for each gate that has some width and height (physical dimension).
 
@@ -261,7 +340,7 @@
 
    By ideal clock, we mean that the time required for a clock to reach any of the flip flops is zero.
 
-**Need for characterization**
+# <h2 id="header-1-4"> Need for characterization </h2>
 
 1. Typical IC design flow that every design needs to go through if it wants to be implemented onto a chip. So, the first step to do that is logic synthesis. If we have a functionality that is coded in the form of RTL, the first step is to convert the functionality into legal hardware is refer to as **logic synthesis.**
 
@@ -281,7 +360,7 @@
 
      ![image](https://github.com/user-attachments/assets/3874c14f-e07b-4e40-aad2-13f4ebc9db60)
 
-**Placement Lab**
+# <h2 id="header-1-5"> Placement [Lab] </h2>
 
 1. We are doing a congestion-related placement, we are right now not considering the timing. We are just ensuring that the congestion is less.
 
@@ -322,7 +401,7 @@
 
 **Note: Power Distribution Network gets created during floorplan but in Openlane flow right now, the order is a little different. The floorplan does not create the Power Distribution Network. Here, in Openlane flow, PDN is done post floorplan, placement, and CTS.**
 
-**Cell Design Flow**
+# <h2 id="header-1-6"> Cell Design Flow </h2>
 
  1. So, we have a placed and routed design here.
       
@@ -388,7 +467,7 @@
       3. **Outputs**: these are actually used by the EDA tools.
   
 
-**General Timing characterization parameters**
+# <h2 id="header-1-7"> General Timing characterization parameters </h2>
 
 1. **Timing Characterization**:
 
@@ -411,9 +490,9 @@
       d. **Output current waveforrm**
 
 
-**DAY 3**
+# <h1 id="header-2"> DAY 3 </h1>
 
-**LAB**
+# <h2 id="header-2-1"> Labs for CMOS inverter ngspice simulations </h2>
 
 1. In Openlane, we can do the **changes on the fly**. If suppose, we have already done the floorplan and observed a lot of congestion, we can change utilization factor even now. In our case, we have placed the IO pins equidistant, now we will be changing it to some other input output pin strategy. There are **4 strategies supported by the IO placer**.
 
@@ -544,6 +623,8 @@
 
          ![image](https://github.com/user-attachments/assets/df661033-92a6-4b21-b6e0-aa7c9e57624c)
 
+   
+# <h2 id="header-2-2"> Inception of Layout And CMOS fabrication process </h2>
 
 
       
