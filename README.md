@@ -73,6 +73,12 @@
 	      <ul>
         		<li><a href="#header-2-2-7"> Steps to form contacts and interconnects (local) </a></li>
  		</ul>
+	      <ul>
+        		<li><a href="#header-2-2-8"> Higher level metal formation </a></li>
+ 		</ul>
+	      <ul>
+        		<li><a href="#header-2-2-9"> Lab introduction to Sky130 basic layers layout and LEF using inverter  </a></li>
+ 		</ul>
  		</ul>
       <ul>
         		<li><a href="#header-2-3">  </a></li>
@@ -887,7 +893,102 @@
 
    ![image](https://github.com/user-attachments/assets/0c1e05cf-7712-4e9a-a1ee-0e918ba141bf)
 
+
+# <h3 id="header-2-2-8"> 8. Higher level metal formation </h3>
+
+   One thing to notice here is that we have non planar surface topography and its not a good idea to deposit the metal interconnects on this layer. There are some problems wrt metal discontinuity.
    
+   So, we need to planerious this surface.
+
+   ![image](https://github.com/user-attachments/assets/004e0659-e5ca-4ce5-a9c4-317a82a30b44)
+
+   ![image](https://github.com/user-attachments/assets/c0fae799-4765-4d29-ac28-c1d4e0195379)
+
+   ![image](https://github.com/user-attachments/assets/fb9a7732-5e3f-4d6d-9e16-3c305b10163a)
+
+   ![image](https://github.com/user-attachments/assets/d65f6ec4-949e-4636-a7e8-fd68ae5b1c0f)
+
+   ![image](https://github.com/user-attachments/assets/d2fbb614-89a2-4c12-91e7-d3c5918db197)
+
+   ![image](https://github.com/user-attachments/assets/d8df0306-a66c-47ca-a411-507bf0dfc835)
+
+   ![image](https://github.com/user-attachments/assets/d3f693dc-728b-4938-b272-480c438596fd)
+
+   ![image](https://github.com/user-attachments/assets/12503801-a485-4adb-851a-52693f4d317b)
+
+   ![image](https://github.com/user-attachments/assets/9fd4023b-bc83-43c4-bed6-49ae5e15b49d)
+
+   ![image](https://github.com/user-attachments/assets/281eec81-4990-4301-ad20-eb9e66886f9f)
+
+   ![image](https://github.com/user-attachments/assets/1a20b5a3-1ab5-484f-a043-508f7580f00c)
+
+   ![image](https://github.com/user-attachments/assets/98f0c330-8c40-4386-a3fe-f82ad4a536af)
+
+   Till here, we have the **local interconnects (0 level of metal), 1st level of interconnects (Aluminium interconnects)**.
+
+   Now the next step is to again take this **metal levels to the higher level metal**.
+
+   ![image](https://github.com/user-attachments/assets/43416f56-f290-4abc-a307-28ccfdf8c027)
+
+   ![image](https://github.com/user-attachments/assets/3ac165de-2668-46c0-886b-5bc593fb5e98)
+
+   ![image](https://github.com/user-attachments/assets/02fc3279-0195-4297-af64-5b14250fd7e8)
+
+   **TiN acts an additional layer to SiO2 and acts as the barrier between lower and higher metal layers**.
+
+   ![image](https://github.com/user-attachments/assets/6586fa91-4e71-4cf8-85e6-19c13afb89e2)
+
+   ![image](https://github.com/user-attachments/assets/112c38cc-8b98-4082-b1a6-250480c812be)
+
+   ![image](https://github.com/user-attachments/assets/af3ed65d-3751-419c-97ce-7fcb2c08f654)
+
+   ![image](https://github.com/user-attachments/assets/16620b28-a6e4-4dc9-94c1-41d63797c3eb)
+
+   **So, this is how 16 mask CMOS process will look like:**
+
+   ![image](https://github.com/user-attachments/assets/c5033982-833d-410e-9984-44ef950a8ec6)
+
+
+# <h3 id="header-2-2-9"> 9. Lab introduction to Sky130 basic layers layout and LEF using inverter </h3>
+
+
+
+   
+
+   
+
+   
+
+   
+
+
+   
+
+
+
+
+
+
+
+
+   
+
+   
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
