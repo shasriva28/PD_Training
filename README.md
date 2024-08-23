@@ -81,20 +81,8 @@
  		</ul>
  		</ul>
       <ul>
-        		<li><a href="#header-2-3">  </a></li>
+        		<li><a href="#header-2-3"> Sky130 Tech File Labs </a></li>
  		</ul>
-      <ul>
-        		<li><a href="#header-2-4">  </a></li>
- 		</ul>
-      <ul>
-        		<li><a href="#header-2-5">   </a></li>
- 		</ul>
-      <ul>
-        		<li><a href="#header-2-6">   </a></li>
- 		</ul>
-      <ul>
-         <li><a href="#header-2-7">  </a></li>
-	</ul>
  </ul>
 </div>
 
@@ -651,6 +639,8 @@
 
          ![image](https://github.com/user-attachments/assets/df661033-92a6-4b21-b6e0-aa7c9e57624c)
 
+      	The read line that we are seeing in the above inverter layout is the polysilicon.
+
    
 # <h2 id="header-2-2"> Inception of Layout And CMOS fabrication process </h2>
 
@@ -950,6 +940,80 @@
 
 
 # <h3 id="header-2-2-9"> 9. Lab introduction to Sky130 basic layers layout and LEF using inverter </h3>
+
+1. On the right side of the CMOS inverter layout, we have all color palets, these are basically the layers.
+
+   ![image](https://github.com/user-attachments/assets/87b8ec98-1cf1-4b14-9f7c-5b6c4de3af3d)
+
+   Green is the ndifusion layer, for verifying you can go to the green color in the color palet and it will show ndiffusion written at the top right bar.
+
+   **When the poly crosses n-diffusion, its an NMOS. Similarly, when the poly crosses p-diffusion, its a PMOS.**
+
+   For verifying the NMOS, we selected the region and then wrote what in the tkcon, it came out to be NMOS.
+
+   ![image](https://github.com/user-attachments/assets/8dbeeaca-11d2-4a33-b0da-ebed992874f0)
+
+   Similarly, we did for PMOS.
+
+   ![image](https://github.com/user-attachments/assets/6b032002-2362-4053-83d7-f5773ab20a75)
+
+   Now we will verify that the drain of PMOS and NMOS are connected.
+
+   For that, **place your cursor at the output pin Y and press S twice**, all the highlighed boundary in white in connected which shows that drains of both PMOS & NMOS are connected.
+
+   ![image](https://github.com/user-attachments/assets/45892997-b290-474e-ab62-5efb0080d3f6)
+
+   Now, check the connection of source of PMOS:
+
+   ![image](https://github.com/user-attachments/assets/04450162-3bb4-4f87-a79f-8a559e7a052e)
+
+   So, source of the PMOS is connected to VDD net.
+
+   Similarly, verified that the source of NMOS is connected to ground.
+
+   ![image](https://github.com/user-attachments/assets/d43d0d19-082d-44a4-8ab1-c01ff7354524)
+
+   **Lab steps to create std cell layout and extract spice netlist:** https://github.com/nickson-jose/vsdstdcelldesign
+
+   How do we know what is the logical function of this inverter?
+
+   For that, **we would first extract this SPICE and post that we will do simulations in ngspice.**
+
+   **To extract it on spice:**
+
+   Open the tkcon window and see where we are and extract it in a file using the **command extract all.**
+
+   ![image](https://github.com/user-attachments/assets/066d70b3-0518-42aa-acaa-6be95d93d99b)
+
+   ![image](https://github.com/user-attachments/assets/ce0473f0-bc40-49f0-ae7a-b3479e2b394b)
+
+   Now, we will use this ext file to create spice file to be used with the ngspice tool using command **ext2spice**.
+
+   ![image](https://github.com/user-attachments/assets/78f73d30-08aa-4eb8-8b7c-4e23b79ae13c)
+
+   ![image](https://github.com/user-attachments/assets/4169dcae-69a1-4c2f-9d1e-a50e74cafed8)
+
+   **Extracted spice netlist:**
+
+   ![image](https://github.com/user-attachments/assets/f4ec0899-2ca6-474f-b564-1d30c2d8662d)
+
+
+
+
+
+
+   
+
+   
+   
+
+
+
+   
+
+
+
+
 
 
 
