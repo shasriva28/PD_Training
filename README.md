@@ -82,6 +82,15 @@
  		</ul>
       <ul>
         		<li><a href="#header-2-3"> Sky130 Tech File Labs </a></li>
+	      <ul>
+        		<li><a href="#header-2-3-1"> Lab steps to create final SPICE deck using Sky130 tech </a></li>
+ 		</ul>
+	      <ul>
+        		<li><a href="#header-2-3-2"> Lab steps to characterize inverter using Sky130 model files </a></li>
+ 		</ul>
+	      <ul>
+        		<li><a href="#header-2-3-3"> Lab introduction to Magic tool options and DRC rules </a></li>
+ 		</ul>
  		</ul>
  </ul>
 </div>
@@ -996,6 +1005,90 @@
    **Extracted spice netlist:**
 
    ![image](https://github.com/user-attachments/assets/f4ec0899-2ca6-474f-b564-1d30c2d8662d)
+
+
+# <h2 id="header-2-3"> Sky130 Tech File Labs </h2>
+
+# <h3 id="header-2-3-1"> 1. Lab steps to create final SPICE deck using Sky130 tech </h3>
+
+1. Netlist:
+
+	Doubel tick ones are defined in the netlist. We need to add some more lines to SPICE code for the below circuit.
+
+ 	![image](https://github.com/user-attachments/assets/b503b8bc-1d21-44a5-ad89-076a5f78096f)
+
+2. Edited SPICE netlist:
+
+	![image](https://github.com/user-attachments/assets/179696c9-d58d-456a-99de-7fc728a7940e)
+
+ 	We will run it in ngspice and will check the result.
+
+	![image](https://github.com/user-attachments/assets/522922c5-dc0c-4e65-badd-4900372a81bb)
+
+	Plotted the Y vs time A
+
+	![image](https://github.com/user-attachments/assets/77cc4283-a90e-4d9d-bc10-eaf1b75b8184)
+
+	![image](https://github.com/user-attachments/assets/8744ce53-d655-4597-935e-06f5f0472bf0)
+
+
+	We can see the spikes, load is very less, will modify the netlist.
+
+	Edited netlist:
+
+	![image](https://github.com/user-attachments/assets/aabaa437-d355-4f9b-b58d-40a6386ea032)
+
+	![image](https://github.com/user-attachments/assets/3d76c55b-8ef4-415e-900b-7ecca46fb7b3)
+
+	![image](https://github.com/user-attachments/assets/18a213e6-9238-489e-a010-5110018dc7dd)
+
+
+# <h3 id="header-2-3-2"> 2. Lab steps to characterize inverter using Sky130 model files </h3>
+
+1. Rise Transition --> Time taken by the output to rise from 20 to 80% of the max value.
+
+	20% of 3.3 = 0.66, 80% of 3.3 = 2.64
+
+   	![image](https://github.com/user-attachments/assets/1930236d-6c57-4f0a-8805-e69a334d7a93)
+
+   	**Rise transition = 0.064 ns**
+
+ 	Similarly, **Fall transition = 0.042 ns**
+
+2. Cell Fall/Rise delay --> cell propagation delay when the output is falling/rising between 50% of the values.
+
+	50% of 3.3 V = 1.65 V
+
+	So we will fine the time diff between input and output when the value is 1.65 V.
+
+	![image](https://github.com/user-attachments/assets/e6d45d96-a4f2-4612-b7c4-c0b9c0123679)
+
+	**rise delay = 0.061 ns**
+
+   	Similarly, **fall delay = 0.027 ns**
+
+   So, we have got all the four parameters above, the **cell characterization is done.**
+
+# <h3 id="header-2-3-3"> 3. Lab introduction to Magic tool options and DRC rules </h3>
+
+	![image](https://github.com/user-attachments/assets/a402f4ab-afb1-402a-a7c8-66dc467c8626)
+
+	![image](https://github.com/user-attachments/assets/bd8442e1-c742-401f-bfc2-c7e0630fd7ba)
+
+ 
+
+
+
+
+
+
+	
+
+
+
+
+
+
 
 
 
