@@ -733,6 +733,165 @@
 
    ![image](https://github.com/user-attachments/assets/c4efcec4-d0a9-4fbb-a842-be2d5ce8871b)
 
+4. **Formation of 'gate'**
+
+   ![image](https://github.com/user-attachments/assets/5d45c934-713f-42d9-a8ec-bc20a1cbb156)
+
+   ![image](https://github.com/user-attachments/assets/9ef42721-dbb4-4808-a6b7-2b5a12ea2672)
+
+   We are going to control the oxide capacitance and the doping concentration through the further steps.
+
+   So the next step for the formation of gate is to control the doping concentration.
+
+   Same masking steps again, repetetive steps.
+
+   **Threshold Voltage controlling:**
+
+   ![image](https://github.com/user-attachments/assets/3ae10306-48cf-4546-a899-6e6871667167)
+
+   ![image](https://github.com/user-attachments/assets/936a2108-554e-419f-8766-2eac93895317)
+
+   ![image](https://github.com/user-attachments/assets/2933ba62-40e8-4124-9b9a-9defe21d43c9)
+
+   ![image](https://github.com/user-attachments/assets/b69c62f8-5ed7-4206-b7d3-c91815f638b4)
+
+   **Fixing of oxide:** --> that got damaged while Ion implantations.
+
+   ![image](https://github.com/user-attachments/assets/4d15488f-3cfc-40c1-8102-b2da31ccd0d1)
+
+   ![image](https://github.com/user-attachments/assets/d02cb341-3707-4cff-a31a-55a3f6f386ec)
+
+   Now the **formation of gate** step:
+
+   ![image](https://github.com/user-attachments/assets/bcc47194-673b-4f3c-9513-2b25f97a70ee)
+
+   ![image](https://github.com/user-attachments/assets/62744e7a-3c3d-439f-8004-1e916f7f54e1)
+
+   ![image](https://github.com/user-attachments/assets/be715c8f-b0c5-488f-b91d-2565ef063127)
+
+   ![image](https://github.com/user-attachments/assets/3d083492-98ef-4056-97c3-59a7250a8f6c)
+
+   ![image](https://github.com/user-attachments/assets/ae966f7f-93cc-4c89-a651-7970966a3ea2)
+
+   ![image](https://github.com/user-attachments/assets/5f44a829-0bf9-49ae-8752-55269d6f2f13)
+
+   ![image](https://github.com/user-attachments/assets/70ba1725-0c13-418a-b0e3-caa8db0a915a)
+
+
+5. **Lightly doped drain (LDD) formation**
+
+   What we want to achieve over here is the doping profile that is **P+,P-,N in N-well where we are trying to fabricate the PMOS**.
+
+   Similarly, for the **NMOS that is being fabricated in the P-well**, we need **N+,N-,P **doping profile.
+
+   ![image](https://github.com/user-attachments/assets/48fccbe5-4ef9-44a7-b64f-2aa9eea0ef05)
+
+   **Why do we need these kind of doping profiles?**
+
+   1. Hot electron effect:
+
+	![image](https://github.com/user-attachments/assets/71d4de63-158f-43e4-901a-ee4c51916d16)
+
+   2. Short channel effect:
+
+	![image](https://github.com/user-attachments/assets/0b78b2c0-bbad-4b17-bf0f-476f7293895f)
+
+
+   ![image](https://github.com/user-attachments/assets/cc357fa6-0946-40d5-872f-c85aacb03604)
+
+   ![image](https://github.com/user-attachments/assets/07ee560b-3d77-4049-b321-c905c618f5ea)
+
+   ![image](https://github.com/user-attachments/assets/1dd03dc8-1390-452c-827b-020782f66ae3)
+
+   ![image](https://github.com/user-attachments/assets/76e29f5e-ac49-430e-95d8-c80330005aae)
+
+   **How to protect from further Source and Drain formation?**
+
+   ![image](https://github.com/user-attachments/assets/93090819-44a2-4c83-9709-3bd0c7bc96ae)
+
+   ![image](https://github.com/user-attachments/assets/a28b7dcc-8956-4b0f-97d9-40eeb61f5877)
+
+   ![image](https://github.com/user-attachments/assets/d69aac7a-c49a-410a-81ff-1ad53e8072c8)
+
+   ![image](https://github.com/user-attachments/assets/9664121c-97ed-4bf0-9487-73745d63df27)
+
+6. **Source and Drain formation**
+
+   The next step is to add a **thin layer of screen oxide** to avoid the effect of channeling.
+
+   Channeling is an effect when you do a lot of ion implantation, if the vector velocity of our ions match with that of the crystaline structure of the p-type substrate, the ions might go deep inside the p-type substrate without even hitting any of the silicon atoms.
+
+   ![image](https://github.com/user-attachments/assets/1a77e5fb-ab33-4969-bbbb-8fc0688add3f)
+
+   ![image](https://github.com/user-attachments/assets/c92cd386-e783-443b-b0be-e0a05f62f497)
+
+   ![image](https://github.com/user-attachments/assets/7bb738cc-858d-4799-a557-42dca97e4ca4)
+
+   ![image](https://github.com/user-attachments/assets/36c05222-67a8-4667-85f3-d7c51cdec4bd)
+
+   ![image](https://github.com/user-attachments/assets/a9317ab5-9154-47d6-badb-e6fb542376eb)
+
+   ![image](https://github.com/user-attachments/assets/f19a0d29-c207-49e4-a4c5-32d4ee922c7b)
+
+   ![image](https://github.com/user-attachments/assets/0fc00b73-49a6-4387-92a0-972a24d03a67)
+
+   So, we will put this half built pmos and nmos to high temperature furnace.
+
+   ![image](https://github.com/user-attachments/assets/87048080-6f8d-4661-8105-c8c52c627172)
+
+
+   
+
+
+
+
+   
+
+
+   
+
+   
+
+
+
+
+   
+
+
+
+   
+
+
+
+
+
+   
+
+
+
+   
+
+
+
+
+
+   
+
+   
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
 
    
 
