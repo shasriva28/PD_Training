@@ -91,6 +91,12 @@
 	      <ul>
         		<li><a href="#header-2-3-3"> Lab introduction to Magic tool options and DRC rules </a></li>
  		</ul>
+	      <ul>
+        		<li><a href="#header-2-3-4"> Lab introduction to Sky130 pdk's and steps to download labs </a></li>
+ 		</ul>
+	      <ul>
+        		<li><a href="#header-2-3-5"> Lab introduction to Magic and steps to load Sky130 tech-rules </a></li>
+ 		</ul>
  		</ul>
  </ul>
 </div>
@@ -1075,7 +1081,39 @@
 
 ![image](https://github.com/user-attachments/assets/bd8442e1-c742-401f-bfc2-c7e0630fd7ba)
 
- 
+**Magic DRC documentation**: http://opencircuitdesign.com/magic/
+
+
+# <h3 id="header-2-3-4"> 4. Lab introduction to Sky130 pdk's and steps to download labs </h3>
+
+![image](https://github.com/user-attachments/assets/d194228c-54da-4093-b480-6b9e364acf98)
+
+**Skywater documentation**: https://skywater-pdk.readthedocs.io/en/main/rules/background.html
+
+**DRC rules**: http://opencircuitdesign.com/magic/techref/maint2.html#drc
+
+![image](https://github.com/user-attachments/assets/309a86cc-4911-4fd4-8322-0b2b138ae4ec)
+
+![image](https://github.com/user-attachments/assets/78228bf6-69ad-4df3-b63d-6fde571393f0)
+
+![image](https://github.com/user-attachments/assets/5393599d-fb06-444f-9adc-241a6bdcf182)
+
+![image](https://github.com/user-attachments/assets/d4d832ad-574c-47b5-9249-660e238ff1fe)
+
+
+# <h3 id="header-2-3-5"> 5. Lab introduction to Magic and steps to load Sky130 tech-rules </h3>
+
+![image](https://github.com/user-attachments/assets/cc0b4c43-8f06-48d6-a985-1c3929433248)
+
+![image](https://github.com/user-attachments/assets/9cf3aef2-e65a-425a-be3a-f199467341a5)
+
+![image](https://github.com/user-attachments/assets/9ed92dff-17d1-48ae-a476-175a18d82de3)
+
+
+
+
+
+
 
 
 
