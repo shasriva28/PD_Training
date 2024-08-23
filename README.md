@@ -68,6 +68,7 @@
       <ul>
          <li><a href="#header-2-7">  </a></li>
 	</ul>
+ </ul>
 </div>
 
 # <h1 id="header-0"> DAY 1 </h1>
@@ -625,6 +626,135 @@
 
    
 # <h2 id="header-2-2"> Inception of Layout And CMOS fabrication process </h2>
+
+## 16-mask CMOS process
+
+1. **Selecting a substrate**:
+
+   Substrate is something on which you fabricate your complete design.
+
+   There are various kind of substrate available but we will go for the most common one which we use for most of the mobile devices or any kind of device or chip you see in the real time --> **p-type**
+
+   ![image](https://github.com/user-attachments/assets/0aa527d2-be4e-4c68-bd9b-67d6b690f93d)
+
+2. **Creating active region for transistors**:
+
+   1. Grow 40nm Silicon dioxide (SiO2) [act as an insulator] on the p-type substrate.
+
+   2. Deposit a layer of 80nm Si3N4 over it.
+
+   3. Deposit a layer of photoresist (1um) on top of it. Photoresist is a film, positive or negative film that see for old cameras. On this photoresist we are going to do some process.
+
+   4. Mask1 --> When we talk about layouts those are nothing but mask in fabrication term. We basically protect some desired area through masking. In the below snippet that red color is masking. If there is UV light, then the area underneath those red masks are protected while the other resions are exposed to those UV light. So, we basically wash those resist area those are directly exposed to the UV light.
+
+	![image](https://github.com/user-attachments/assets/3600eacd-2b5e-478d-b9ff-d02512ce520c)
+  
+   5. After washing the exposed photoresist region:
+
+	![image](https://github.com/user-attachments/assets/63f98756-3a53-48c8-8273-ead08c04227a)
+
+   6. Next step is to remove the mask: (These all are process of photolithography)
+
+	![image](https://github.com/user-attachments/assets/1405c7e8-f7a0-4b16-8e8e-f5d395f9a48d)
+
+   7. Etched off the Si3N4, Only the area underneath the photoresist will be protected, the remaing Si3N4 area will be etched off.
+
+	![image](https://github.com/user-attachments/assets/847260b1-9685-4e07-a50c-1b90cd6db079)
+
+   8. Next step is to remove the photoresist itself because Si3N4 itself will act as a very good protection layer to grow the oxides on the other area.
+
+	![image](https://github.com/user-attachments/assets/ea887a0d-cf51-47f0-badc-084acf164aef)
+
+   9. Now we will put this complete thing into an oxidation furnace. A furnace is a place which works at very high temperature upto 900-1000 degree celsius that helps to grow the oxide in the other areas. We have grown the first layer of SiO2 in oxidation furnace itself. Now there will be second level of growth of oxidation.
+
+	![image](https://github.com/user-attachments/assets/32597180-4dff-40b2-8b1f-61750bd5e4ed)
+
+	These areas of thick deposition of Si3N4 are called as isolation region and the **transistors at both the side won't be able to communicate to each other because of this isolation region**. This process that we have done is referred to as **LOCOS.**
+
+	![image](https://github.com/user-attachments/assets/aec1ffd4-4ab5-4b30-af15-b50c922915cf)
+
+   10. Next step is to remove or etch oyt the Si3N4.
+
+	![image](https://github.com/user-attachments/assets/5899aacd-c163-401b-996a-17b2c2aa724b)
+
+   11. So, we have got the **2 active regions where we actually grow transistors** and the isolation region will protect transistors so that they are not communicating with each other. So, we have actually created an **electrical isolation** over here.
+
+3. **N-well and P-well formation**
+
+   **N-well is used for pmos fabrication and P-well is used for nmos fabrication**. Both can't be done at the same time. We need to protect the one area while we fabricate the other.
+
+   The same steps will be done here also, deposit a layer of photoresist then define pattren of layer you want to protect. So we are using Mask2 to protect one area first.
+
+   ![image](https://github.com/user-attachments/assets/7769effc-6a34-422e-84b4-c01214650cb2)
+
+   How does this Mask2 looks into the layout, lets see a top view of CMOS inverter in Magic.
+
+   ![image](https://github.com/user-attachments/assets/eeb91356-3a63-4d63-b46f-329c2776205d)
+
+   The right one is CMOS inverter and the left one is showing the Mask2 in the layout.
+
+   Next step is to expose this photoresist to the UV light. So, same this UV light will react only to the exposed photoresist area.
+
+   ![image](https://github.com/user-attachments/assets/e64ca778-f9be-4716-a5b2-0f2489bbe2b7)
+
+   When we wash this particular thing into a solution, that exposed area of photoresist will washed away.
+
+   ![image](https://github.com/user-attachments/assets/58baac40-94a5-4ad8-9bd5-a2ac6296192f)
+
+   Now, the right area is available for any chemical reactions or anything we have to do over here.
+
+   Next step is to remove the Mask2 also. And finally we have to create a **p-well** over here.
+
+   P-well is created using Boron. Boron is a p-type material and it is diffused into this particular p-type substrate using a process called as **Ion implantation**. So, Boron being a p-type creates a P-well over here and the energy that is needed to diffuse the Boron through the oxide layer present is about 200keV.
+
+   ![image](https://github.com/user-attachments/assets/70f5da1e-fc9d-4c7d-973b-856449d79c15)
+
+   We will do the similar steps of the **N-well creation** also.
+
+   ![image](https://github.com/user-attachments/assets/9bd5d112-bb73-46aa-b49a-0f09da3733ef)
+
+   For N-well creation, we will use **Phosphorous** that is an n-type material and a bit heavier than Boron. Then again the Ion implantation of Phosphorous will be done to create the N-well.
+
+   ![image](https://github.com/user-attachments/assets/fcd22667-2e1d-431b-8155-230a1ea6cbfc)
+
+   ![image](https://github.com/user-attachments/assets/0a495508-a5f7-4b94-9527-7580d1dd5f7c)
+
+   So, we have created the wells over here but the depths of the wells are not finalized yet. So, this was just the well creation.
+
+   Next we have to diffuse the wells so that it occupies almost half of the substrate area. So that we have a clear room available for pmos and nmos fabrication.
+
+   So, the next step is to take this thing, this complete substrate into a high temperature furnace. It is called as **Drive in furnace**.
+
+   Push it to a very high temp for a very long time about 11 degree celcius for 4-5 hrs.
+
+   So, this will diffuse the Boro and Phosphorous atoms into the p-type substrate forming the clear wells. This is called as **Twin tub process.**
+
+   In N-well, we are going to create pmos transistor and in P-well, we are going to create nmos transistor.
+
+   ![image](https://github.com/user-attachments/assets/c4efcec4-d0a9-4fbb-a842-be2d5ce8871b)
+
+
+   
+
+   
+
+
+
+
+
+
+   
+
+
+
+   
+
+	
+
+
+ 
+
+   
 
 
       
