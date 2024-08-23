@@ -70,6 +70,9 @@
 	      <ul>
         		<li><a href="#header-2-2-6"> Source and Drain formation </a></li>
  		</ul>
+	      <ul>
+        		<li><a href="#header-2-2-7"> Steps to form contacts and interconnects (local) </a></li>
+ 		</ul>
  		</ul>
       <ul>
         		<li><a href="#header-2-3">  </a></li>
@@ -856,6 +859,58 @@
 
    ![image](https://github.com/user-attachments/assets/87048080-6f8d-4661-8105-c8c52c627172)
 
+# <h3 id="header-2-2-7"> 7. Steps to form contacts and interconnects (local) </h3>
+
+   Contacts are really very imp because thats the only thing that is accessible to an user through which you can control the electrical characteristics of pmos and nmos.
+
+   ![image](https://github.com/user-attachments/assets/232fc1fd-3bf0-4c4e-9f35-5e0ff5d0e703)
+
+   ![image](https://github.com/user-attachments/assets/18783ae3-4c9d-4d53-a756-2e3a1f66291d)
+
+   ![image](https://github.com/user-attachments/assets/a1cb4afc-c770-4f36-ba06-95d327bb007e)
+
+   ![image](https://github.com/user-attachments/assets/d22c75f2-446a-4b49-a175-29d3212cfdc2)
+
+   ![image](https://github.com/user-attachments/assets/f07d62c9-1edf-49c4-b771-ac0b3009fca1)
+
+   ![image](https://github.com/user-attachments/assets/70c6d039-5bcc-4444-8772-c3a37d8836c2)
+
+   ![image](https://github.com/user-attachments/assets/7e04045c-d2dd-41fa-b768-ac0812cafac6)
+
+   ![image](https://github.com/user-attachments/assets/01de4957-986a-4f85-a441-204f5f2ca5e7)
+
+   ![image](https://github.com/user-attachments/assets/88a475c9-825a-473d-8646-92fc28c0a01c)
+
+   ![image](https://github.com/user-attachments/assets/05baa5ad-bd03-4663-b6f3-62b1bf3ea218)
+
+   ![image](https://github.com/user-attachments/assets/7b08776c-93d3-4900-8e07-9fe39e33b5e7)
+
+   ![image](https://github.com/user-attachments/assets/0c1e05cf-7712-4e9a-a1ee-0e918ba141bf)
+
+   
+
+
+
+   
+
+
+   
+
+
+   
+
+
+   
+
+
+
+
+
+
+
+
+
+	
 
    
 
