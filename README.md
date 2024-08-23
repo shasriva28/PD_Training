@@ -52,6 +52,24 @@
  		</ul>
       <ul>
         		<li><a href="#header-2-2"> Inception of Layout And CMOS fabrication process </a></li>
+	      <ul>
+        		<li><a href="#header-2-2-1"> Selecting a substrate </a></li>
+ 		</ul>
+	      <ul>
+        		<li><a href="#header-2-2-2"> Creating active region for transistors </a></li>
+ 		</ul>
+	      <ul>
+        		<li><a href="#header-2-2-3"> N-well and P-well formation </a></li>
+ 		</ul>
+	      <ul>
+        		<li><a href="#header-2-2-4"> Formation of 'gate' </a></li>
+ 		</ul>
+	      <ul>
+        		<li><a href="#header-2-2-5"> Lightly doped drain (LDD) formation  </a></li>
+ 		</ul>
+	      <ul>
+        		<li><a href="#header-2-2-6"> Source and Drain formation </a></li>
+ 		</ul>
  		</ul>
       <ul>
         		<li><a href="#header-2-3">  </a></li>
@@ -629,7 +647,7 @@
 
 ## 16-mask CMOS process
 
-1. **Selecting a substrate**:
+# <h3 id="header-2-2-1"> 1. Selecting a substrate </h3>
 
    Substrate is something on which you fabricate your complete design.
 
@@ -637,7 +655,7 @@
 
    ![image](https://github.com/user-attachments/assets/0aa527d2-be4e-4c68-bd9b-67d6b690f93d)
 
-2. **Creating active region for transistors**:
+# <h3 id="header-2-2-2"> 2. Creating active region for transistors </h3>
 
    1. Grow 40nm Silicon dioxide (SiO2) [act as an insulator] on the p-type substrate.
 
@@ -679,7 +697,7 @@
 
    11. So, we have got the **2 active regions where we actually grow transistors** and the isolation region will protect transistors so that they are not communicating with each other. So, we have actually created an **electrical isolation** over here.
 
-3. **N-well and P-well formation**
+# <h3 id="header-2-2-3"> 3. N-well and P-well formation  </h3>
 
    **N-well is used for pmos fabrication and P-well is used for nmos fabrication**. Both can't be done at the same time. We need to protect the one area while we fabricate the other.
 
@@ -733,7 +751,7 @@
 
    ![image](https://github.com/user-attachments/assets/c4efcec4-d0a9-4fbb-a842-be2d5ce8871b)
 
-4. **Formation of 'gate'**
+# <h3 id="header-2-2-4"> 4. Formation of 'gate' </h3>
 
    ![image](https://github.com/user-attachments/assets/5d45c934-713f-42d9-a8ec-bc20a1cbb156)
 
@@ -777,8 +795,7 @@
 
    ![image](https://github.com/user-attachments/assets/70ba1725-0c13-418a-b0e3-caa8db0a915a)
 
-
-5. **Lightly doped drain (LDD) formation**
+# <h3 id="header-2-2-5"> 5. Lightly doped drain (LDD) formation </h3>
 
    What we want to achieve over here is the doping profile that is **P+,P-,N in N-well where we are trying to fabricate the PMOS**.
 
@@ -815,7 +832,7 @@
 
    ![image](https://github.com/user-attachments/assets/9664121c-97ed-4bf0-9487-73745d63df27)
 
-6. **Source and Drain formation**
+# <h3 id="header-2-2-6"> 6. Source and Drain formation </h3>
 
    The next step is to add a **thin layer of screen oxide** to avoid the effect of channeling.
 
