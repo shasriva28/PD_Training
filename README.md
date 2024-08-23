@@ -674,35 +674,35 @@
 
    4. Mask1 --> When we talk about layouts those are nothing but mask in fabrication term. We basically protect some desired area through masking. In the below snippet that red color is masking. If there is UV light, then the area underneath those red masks are protected while the other resions are exposed to those UV light. So, we basically wash those resist area those are directly exposed to the UV light.
 
-     ![image](https://github.com/user-attachments/assets/3600eacd-2b5e-478d-b9ff-d02512ce520c)
+![image](https://github.com/user-attachments/assets/68b59a7f-4359-4831-9bbe-6d895dca5a50)
   
    5. After washing the exposed photoresist region:
 
-     ![image](https://github.com/user-attachments/assets/63f98756-3a53-48c8-8273-ead08c04227a)
+![image](https://github.com/user-attachments/assets/63f98756-3a53-48c8-8273-ead08c04227a)
 
    6. Next step is to remove the mask: (These all are process of photolithography)
 
-     ![image](https://github.com/user-attachments/assets/1405c7e8-f7a0-4b16-8e8e-f5d395f9a48d)
+![image](https://github.com/user-attachments/assets/1405c7e8-f7a0-4b16-8e8e-f5d395f9a48d)
 
    7. Etched off the Si3N4, Only the area underneath the photoresist will be protected, the remaing Si3N4 area will be etched off.
 
-     ![image](https://github.com/user-attachments/assets/847260b1-9685-4e07-a50c-1b90cd6db079)
+![image](https://github.com/user-attachments/assets/847260b1-9685-4e07-a50c-1b90cd6db079)
 
    8. Next step is to remove the photoresist itself because Si3N4 itself will act as a very good protection layer to grow the oxides on the other area.
 
-     ![image](https://github.com/user-attachments/assets/ea887a0d-cf51-47f0-badc-084acf164aef)
+![image](https://github.com/user-attachments/assets/ea887a0d-cf51-47f0-badc-084acf164aef)
 
    9. Now we will put this complete thing into an oxidation furnace. A furnace is a place which works at very high temperature upto 900-1000 degree celsius that helps to grow the oxide in the other areas. We have grown the first layer of SiO2 in oxidation furnace itself. Now there will be second level of growth of oxidation.
 
-     ![image](https://github.com/user-attachments/assets/32597180-4dff-40b2-8b1f-61750bd5e4ed)
+![image](https://github.com/user-attachments/assets/32597180-4dff-40b2-8b1f-61750bd5e4ed)
 
 	These areas of thick deposition of Si3N4 are called as isolation region and the **transistors at both the side won't be able to communicate to each other because of this isolation region**. This process that we have done is referred to as **LOCOS.**
 
-     ![image](https://github.com/user-attachments/assets/aec1ffd4-4ab5-4b30-af15-b50c922915cf)
+![image](https://github.com/user-attachments/assets/aec1ffd4-4ab5-4b30-af15-b50c922915cf)
 
    10. Next step is to remove or etch oyt the Si3N4.
 
-     ![image](https://github.com/user-attachments/assets/5899aacd-c163-401b-996a-17b2c2aa724b)
+![image](https://github.com/user-attachments/assets/5899aacd-c163-401b-996a-17b2c2aa724b)
 
    11. So, we have got the **2 active regions where we actually grow transistors** and the isolation region will protect transistors so that they are not communicating with each other. So, we have actually created an **electrical isolation** over here.
 
@@ -816,11 +816,11 @@
 
    1. Hot electron effect:
 
-	![image](https://github.com/user-attachments/assets/71d4de63-158f-43e4-901a-ee4c51916d16)
+		![image](https://github.com/user-attachments/assets/71d4de63-158f-43e4-901a-ee4c51916d16)
 
    2. Short channel effect:
 
-	![image](https://github.com/user-attachments/assets/0b78b2c0-bbad-4b17-bf0f-476f7293895f)
+		![image](https://github.com/user-attachments/assets/0b78b2c0-bbad-4b17-bf0f-476f7293895f)
 
 
    ![image](https://github.com/user-attachments/assets/cc357fa6-0946-40d5-872f-c85aacb03604)
