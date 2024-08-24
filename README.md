@@ -131,8 +131,54 @@
         		<li><a href="#header-3-1-7"> Lab steps to configure synthesis settings to fix slack and include vsdinv </a></li>
  		</ul>
  		</ul>
+		<ul>
+        		<li><a href="#header-3-2"> Timing analysis with ideal clock using openSTA </a></li>
+	      <ul>
+        		<li><a href="#header-3-2-1"> Setup timing analysis and introduction to flip-flop setup time  </a></li>
+ 		</ul>
+	      <ul>
+        		<li><a href="#header-3-2-2"> Introduction to clock jitter and uncertainty </a></li>
+ 		</ul>
+	      <ul>
+        		<li><a href="#header-3-2-3"> Lab steps to configure OpenSTA for post-synth timing analysis </a></li>
+ 		</ul>
+	      <ul>
+        		<li><a href="#header-3-2-4">  Lab steps to optimize synthesis to reduce setup violations </a></li>
+ 		</ul>
+ 		</ul>
+		<ul>
+        		<li><a href="#header-3-3"> Clock tree synthesis TritonCTS and signal integrity </a></li>
+	      <ul>
+        		<li><a href="#header-3-3-1"> Clock tree routing and buffering using H-Tree algorithm </a></li>
+ 		</ul>
+	      <ul>
+        		<li><a href="#header-3-3-2"> Crosstalk and clock net shielding </a></li>
+ 		</ul>
+	      <ul>
+        		<li><a href="#header-3-3-3"> Lab steps to run CTS using TritonCTS </a></li>
+ 		</ul>
+ 		</ul>
+		<ul>
+        		<li><a href="#header-3-4"> Timing analysis with real clocks using openTSA </a></li>
+	      <ul>
+        		<li><a href="#header-3-4-1"> Setup timing analysis using real clocks </a></li>
+ 		</ul>
+	      <ul>
+        		<li><a href="#header-3-4-2"> Hold timing analysis using real clocks </a></li>
+ 		</ul>
+	      <ul>
+        		<li><a href="#header-3-4-3">  Lab steps to analyze timing with real clocks using OpenSTA </a></li>
+ 		</ul>
+			<ul>
+        		<li><a href="#header-3-4-4"> Lab steps to execute OpenSTA with right timing libraries and CTS assignment </a></li>
+ 		</ul>
+	      <ul>
+        		<li><a href="#header-3-4-5">  Lab steps to observe impact of bigger CTS buffers on setup and hold timing </a></li>
+ 		</ul>
+ 		</ul>
 	</ul>
 </div>
+
 
 # <h1 id="header-0"> DAY 1 </h1>
 # <h2 id="header-0-1"> OpenLANE directory structure  </h2>
@@ -1388,6 +1434,163 @@ Now, we will **run_placement:**
 Now, we will check our custom cell in the placement:
 
 ![image](https://github.com/user-attachments/assets/3470e03e-cb05-4fe3-93c2-54c42cdc25e0)
+
+# <h2 id="header-3-2"> Timing analysis with ideal clock using openSTA </h2>
+
+# <h3 id="header-3-2-1"> 1. Setup timing analysis and introduction to flip-flop setup time </h3>
+
+![image](https://github.com/user-attachments/assets/bbdee146-d569-4d13-9c1b-4ac34ff562d0)
+
+![image](https://github.com/user-attachments/assets/d400a883-bca1-4b0f-ae6c-2e51520c36db)
+
+![image](https://github.com/user-attachments/assets/ff7e2b70-d371-4200-bcc5-80e940761b75)
+
+![image](https://github.com/user-attachments/assets/a6fb3e00-a177-4ece-b5db-f8161522c551)
+
+![image](https://github.com/user-attachments/assets/5f95b04e-8943-469c-9c91-50d047d3d506)
+
+
+# <h3 id="header-3-2-2"> 2. Introduction to clock jitter and uncertainty </h3>
+
+![image](https://github.com/user-attachments/assets/24c259fe-ad93-4c89-bdc3-09b80c5c95f1)
+
+![image](https://github.com/user-attachments/assets/0018d38b-7e00-44bf-b7a8-f6acf30d50bd)
+
+![image](https://github.com/user-attachments/assets/7443cfcb-c459-4e29-a790-6901213134d9)
+
+![image](https://github.com/user-attachments/assets/a7d2f720-dc41-4cdb-ba32-1da40ec0e063)
+
+![image](https://github.com/user-attachments/assets/cbbbc293-b944-412e-b839-c240cba3ee5a)
+
+So, we will identify the **logic with single clock** first in our design:
+
+![image](https://github.com/user-attachments/assets/d1bf79f8-9e9f-46e4-836d-e8edfd780afb)
+
+![image](https://github.com/user-attachments/assets/9f0df51e-055c-4075-806c-8d3a364436d1)
+
+![image](https://github.com/user-attachments/assets/87eb8ef6-d04a-46de-8cba-3c676f234137)
+
+![image](https://github.com/user-attachments/assets/4b442e09-20bb-4be5-808f-7334bd8ae74e)
+
+# <h3 id="header-3-2-3"> 3. Lab steps to configure OpenSTA for post-synth timing analysis </h3>
+
+Created pre_sta.conf file in openlane dir.
+
+We have got zero tns and wns, therefore doing for verilog file in synthesis directory.
+
+![image](https://github.com/user-attachments/assets/e66024f3-9da9-4894-945c-b07aff0f08f5)
+
+![image](https://github.com/user-attachments/assets/65653d01-9075-4024-b7cb-1e9376942544)
+
+![image](https://github.com/user-attachments/assets/c5b85fcd-1649-434f-ade7-2e070cef2f07)
+
+Right now, hold time does not hold any significance because we have not done CTS. We are assuming ideal clocks that means skew is zero that means **Hold anaylsis will ve overly optimistic, so it will come into picture after CTS**.
+
+So, lets check for the setup analysis.
+
+# <h3 id="header-3-2-4"> 4. Lab steps to optimize synthesis to reduce setup violations </h3>
+
+Lets upsize this buffer selected in the below snippet:
+
+![image](https://github.com/user-attachments/assets/d5679797-b3d9-4241-ad6b-669e29e09e2f)
+
+**This buffer is driver 4 input pins**:
+
+![image](https://github.com/user-attachments/assets/f20c6d82-e83e-4a8d-b9d4-db8ab4bfd78e)
+
+So we are replacing it with a bigger buffer (drive strength=4), it will cost more area but will check after replacing.
+
+![image](https://github.com/user-attachments/assets/10934271-4c96-43da-b68b-a37bc4b240cb)
+
+![image](https://github.com/user-attachments/assets/0785c7c8-2df0-436f-bfb0-b51670e79779)
+
+So the **slack has reduced**:
+
+![image](https://github.com/user-attachments/assets/0e1f656d-140c-496e-93e3-6a008770f63b)
+
+**Path has changed, therefore we are checking for the previous report path:**
+
+Current report path:
+
+![image](https://github.com/user-attachments/assets/da08f769-7465-4ffb-b0d1-c39e9f9bed01)
+
+Previous report path:
+
+![image](https://github.com/user-attachments/assets/5477426d-624f-4690-8eea-4482d50dba5e)
+
+![image](https://github.com/user-attachments/assets/e92726cf-0efc-466f-8c51-6c1ea2f812fe)
+
+The **slack is met:**
+
+![image](https://github.com/user-attachments/assets/2bd77a18-7c4c-4872-88f8-550817084aed)
+
+![image](https://github.com/user-attachments/assets/62a0f419-0bf3-4fb7-9a71-75fc4110220d)
+
+# <h2 id="header-3-3"> Clock tree synthesis TritonCTS and signal integrity </h2>
+
+# <h3 id="header-3-3-1"> Clock tree routing and buffering using H-Tree algorithm </h3>
+
+![image](https://github.com/user-attachments/assets/43d9b22b-4632-450a-b92e-60f1d444c289)
+
+Lets blindly connect them:
+
+![image](https://github.com/user-attachments/assets/b19f563e-e561-4ba6-891a-0eee40ffb53e)
+
+Now lets see **what is the problem with this clock routes:**
+
+![image](https://github.com/user-attachments/assets/a3f22275-a264-4d32-a3d8-b14fb2374158)
+
+Skew should be close to 0 and the tree that we have build is not a good tree.
+
+Now we will build a **H-tree that follows mid point strategy**. So, the skew will be close to 0.
+
+![image](https://github.com/user-attachments/assets/fe563d8c-7501-4783-b0af-1dcd85ad8144)
+
+![image](https://github.com/user-attachments/assets/0791a5a3-0521-42a5-be66-5a95494b312f)
+
+**Problem: signal integrity**
+
+![image](https://github.com/user-attachments/assets/46772a75-35f5-4d06-8beb-71b6a9146311)
+
+**Solution: Add repeaters** --> Repeaters used in the clock path have got **equal rise and fall** [Red buffers].
+
+![image](https://github.com/user-attachments/assets/a7fe5790-38b1-4e8e-a446-d031a87ff68f)
+
+# <h3 id="header-3-3-2"> Crosstalk and clock net shielding </h3>
+
+![image](https://github.com/user-attachments/assets/6d3e7dd3-7a14-4eaf-bf00-9a0d07184635)
+
+![image](https://github.com/user-attachments/assets/c712dba5-1cbe-4948-bfab-a04e851a164f)
+
+![image](https://github.com/user-attachments/assets/a9c4cc19-7212-4ddf-aa0d-1b4ef91ba209)
+
+![image](https://github.com/user-attachments/assets/57c9e870-e94f-4161-9108-f298f4436e76)
+
+**How to shield?** -> Place a VDD and VSS wire parallel to signal wire.
+
+# <h3 id="header-3-3-3"> Lab steps to run CTS using TritonCTS </h3>
+
+Now, **we will replace the previous verilog netlist with this new slack corrected netlist**:
+
+![image](https://github.com/user-attachments/assets/00184f0d-48ac-4771-93aa-e863cc3a3dcb)
+
+Verified the new netlist by searching the buffer that we have made as buf_4:
+
+![image](https://github.com/user-attachments/assets/72eafe99-32ee-4a7c-8ca1-2cf3b320ccf5)
+
+Then we will **run_floorplan** again and then **run_cts**.
+
+New verilog file will get created in synthesis.
+
+# <h2 id="header-3-4"> Timing analysis with real clocks using openSTA </h2>
+
+# <h3 id="header-3-4-1"> Setup timing analysis using real clocks </h3>
+
+# <h3 id="header-3-4-2"> Hold timing analysis using real clocks </h3>
+# <h3 id="header-3-4-3"> Lab steps to analyze timing with real clocks using OpenSTA </h3>
+# <h3 id="header-3-4-4"> Lab steps to execute OpenSTA with right timing libraries and CTS assignment </h3>
+# <h3 id="header-3-4-5"> Lab steps to observe impact of bigger CTS buffers on setup and hold timing </h3>
+
 
 
 
