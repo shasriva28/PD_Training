@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/ca835498-bdeb-41ff-bbef-55f6ac793c48)# Table of Content
+# Table of Content
 
 <div class="toc">
 	<ul>
