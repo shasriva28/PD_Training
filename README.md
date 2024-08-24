@@ -1,4 +1,4 @@
-# Table of Content
+![image](https://github.com/user-attachments/assets/ca835498-bdeb-41ff-bbef-55f6ac793c48)# Table of Content
 
 <div class="toc">
 	<ul>
@@ -97,8 +97,26 @@
 	      <ul>
         		<li><a href="#header-2-3-5"> Lab introduction to Magic and steps to load Sky130 tech-rules </a></li>
  		</ul>
+	      <ul>
+        		<li><a href="#header-2-3-6"> Lab exercise to fix the poly.9 error in Sky130 tech file </a></li>
+ 		</ul>
  		</ul>
  </ul>
+</div>
+
+<div class="toc">
+	<ul>
+    		<li><a href="#header-3"> DAY 4 </a></li>
+      <ul>
+        		<li><a href="#header-3-1"> Timing modelling using delay tables </a></li>
+	      <ul>
+        		<li><a href="#header-3-1-1"> Lab steps to convert grid info to track info </a></li>
+ 		</ul>
+	      <ul>
+        		<li><a href="#header-3-1-1"> Lab steps to convert magic layout to std cell LEF </a></li>
+ 		</ul>
+ 		</ul>
+	</ul>
 </div>
 
 # <h1 id="header-0"> DAY 1 </h1>
@@ -1108,6 +1126,128 @@
 ![image](https://github.com/user-attachments/assets/9cf3aef2-e65a-425a-be3a-f199467341a5)
 
 ![image](https://github.com/user-attachments/assets/9ed92dff-17d1-48ae-a476-175a18d82de3)
+
+**Rules mentioned in Skywater pdk:**
+
+![image](https://github.com/user-attachments/assets/6e82adf1-b7d6-4360-b8ea-a39ae0a224ee)
+
+Creating m3 contact: make a box with left click and right click like we select an object and then hover over m3 contact in color plate and **press pk.**
+
+![image](https://github.com/user-attachments/assets/803c14bc-c438-424e-a730-5b09575d2df7)
+
+type : to go to the tkcon shell and type **cif see VIA2** to see the contact cuts.
+
+![image](https://github.com/user-attachments/assets/52bdb5f8-2466-4be0-a4b5-cb86c81ccf99)
+
+![image](https://github.com/user-attachments/assets/b7b76d4c-db72-48e3-9ad4-de7091c8c408)
+
+
+# <h3 id="header-2-3-6"> 6. Lab exercise to fix the poly.9 error in Sky130 tech file </h3>
+
+![image](https://github.com/user-attachments/assets/0ab9ef23-8d03-4ad7-aba8-3db9317972e3)
+
+![image](https://github.com/user-attachments/assets/d329fd2d-848d-4744-872f-01c185609836)
+
+![image](https://github.com/user-attachments/assets/0c9df517-eb1d-4a26-9970-59c2a2840e17)
+
+Before editing:
+
+![image](https://github.com/user-attachments/assets/f2841315-1eb1-48ef-9885-5b7768f61a39)
+
+After editing:
+
+![image](https://github.com/user-attachments/assets/64af4348-b4fa-4f27-8754-e741c51ecfef)
+
+Now search for aliases:
+
+![image](https://github.com/user-attachments/assets/9c7f758a-d83a-4acf-89e5-1a34313b0094)
+
+![image](https://github.com/user-attachments/assets/3619fc17-7b33-4305-95cf-2942b4e8aef6)
+
+![image](https://github.com/user-attachments/assets/ad48e28a-a604-40d5-9ed1-60249bc99c5e)
+
+![image](https://github.com/user-attachments/assets/cbe5d27b-d118-4bbe-ad9b-175d674bf330)
+
+
+# <h1 id="header-3"> DAY 4 </h1>
+
+# <h2 id="header-3-1"> Timing modelling using delay tables </h2>
+
+# <h3 id="header-3-1-1"> 1. Lab steps to convert grid info to track info </h3>
+
+First step would be to extract a LEF file out of this sky130_inv.mag file.
+
+Open the tracks.info file: [ Tracks are used in the routing stage]
+
+![image](https://github.com/user-attachments/assets/7ce732bb-0157-4cdb-bf65-5234f8091271)
+
+**Press G** to activate the grid in Magic.
+
+**Input and Output ports should be at the intersection of horizontal and vertical tracks.** --> This is the 1st requirement.
+
+![image](https://github.com/user-attachments/assets/b42bdb85-63b8-4145-9519-b607234eae06)
+
+Grid boxes have taken the dimension that we have provided:
+
+![image](https://github.com/user-attachments/assets/77c7cc61-af86-4b72-af7d-18bba7a83ab8)
+
+So, we have converted the grid according to the track info.
+
+# <h3 id="header-3-1-2"> 2. Lab steps to convert magic layout to std cell LEF </h3>
+
+The 2nd requirement is that the width of the std cells should be in the odd multiples of the x pitch of that layer.
+
+We have verified that the layout of the inverter is as per the requirements of the PNR tool.
+
+Creation of port example:
+
+![image](https://github.com/user-attachments/assets/6bd2f4e9-61e9-497a-a263-f9f6116303d6)
+
+Now we are ready to extract the LEF file from this .mag.
+
+Saved used a custom name sky130_shasriva.mag.
+
+![image](https://github.com/user-attachments/assets/92bfd8ae-dc5d-4069-af64-45fdbc1444ba)
+
+![image](https://github.com/user-attachments/assets/798f8e22-cbb9-4f30-bf48-aa96853bd94d)
+
+Open the new custom .mag file and do **lef write**.
+
+![image](https://github.com/user-attachments/assets/a9aa6b08-4d68-4c56-935b-5f70c2044c4b)
+
+![image](https://github.com/user-attachments/assets/4ff53237-1217-4cbf-8f05-6f2057c5d80e)
+
+![image](https://github.com/user-attachments/assets/326c1a93-dc7b-4db8-9ec4-61a0c6019dee)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
