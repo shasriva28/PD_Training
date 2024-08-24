@@ -113,7 +113,22 @@
         		<li><a href="#header-3-1-1"> Lab steps to convert grid info to track info </a></li>
  		</ul>
 	      <ul>
-        		<li><a href="#header-3-1-1"> Lab steps to convert magic layout to std cell LEF </a></li>
+        		<li><a href="#header-3-1-2"> Lab steps to convert magic layout to std cell LEF </a></li>
+ 		</ul>
+	      <ul>
+        		<li><a href="#header-3-1-3"> Introduction to timing libs and steps to include new cell in synthesis </a></li>
+ 		</ul>
+	      <ul>
+        		<li><a href="#header-3-1-4"> Introduction to delay tables </a></li>
+ 		</ul>
+	      <ul>
+        		<li><a href="#header-3-1-5"> Delay table usage Part 1 </a></li>
+ 		</ul>
+	      <ul>
+        		<li><a href="#header-3-1-6"> Delay table usage Part 2 </a></li>
+ 		</ul>
+	      <ul>
+        		<li><a href="#header-3-1-7"> Lab steps to configure synthesis settings to fix slack and include vsdinv </a></li>
  		</ul>
  		</ul>
 	</ul>
@@ -1218,6 +1233,195 @@ Open the new custom .mag file and do **lef write**.
 ![image](https://github.com/user-attachments/assets/4ff53237-1217-4cbf-8f05-6f2057c5d80e)
 
 ![image](https://github.com/user-attachments/assets/326c1a93-dc7b-4db8-9ec4-61a0c6019dee)
+
+# <h3 id="header-3-1-3"> 3. Introduction to timing libs and steps to include new cell in synthesis </h3>
+
+**Basic idea is to include the custom cell in the OpenLANE flow.**
+
+Copy the custom lef files and the libs in this src dir:
+
+![image](https://github.com/user-attachments/assets/aee751fa-5cd6-4410-9c88-d03b1c3c825d)
+
+![image](https://github.com/user-attachments/assets/2c61943d-4266-40c6-8253-cc9414e0b633)
+
+Now we need to modify our config.tcl.
+
+Original config.tcl:
+
+![image](https://github.com/user-attachments/assets/d9627bcb-9450-4a52-b481-e5d061c472d8)
+
+Modified Config.tcl:
+
+![image](https://github.com/user-attachments/assets/3bc19a04-38b7-436e-85d4-965930c1d432)
+
+![image](https://github.com/user-attachments/assets/c1486f7e-727e-4fa9-aa0d-b54f03037391)
+
+![image](https://github.com/user-attachments/assets/41937b10-be1f-49bb-9efa-fd48fc997865)
+
+![image](https://github.com/user-attachments/assets/f758a53f-4e9b-4fca-aba8-80f98159ad3a)
+
+# <h3 id="header-3-1-4"> 4. Introduction to delay tables </h3>
+
+![image](https://github.com/user-attachments/assets/6277f445-c720-44e5-8e30-833eca09ebb9)
+
+The advantage of using above circuits in the clock tree is that the rest of the circuit for the amount of time CLK is not getting propagated through the gates, there will be no switching and short ckt power that will be consumed by the clock tree during that period of time.
+So, lot of power is getting save during that time.
+
+Using these kind of AND and OR gates in clock tree is basically known as **clock gating**.
+
+Can we blindly swipe any buffer in the clock tree to such AND/OR gate as shown in the below snippet?
+
+![image](https://github.com/user-attachments/assets/6fb4f65a-6aa4-4aae-903d-1ca0d1cd83ba)
+
+![image](https://github.com/user-attachments/assets/dc2e86fa-3129-4f53-bccb-2cd07dea7977)
+
+Why are we doing this particular observation as in the above snippet? Why do we even need this kind of observation?
+
+The Cload at the output of the buffers at each level will not be same for the whole clock tree.
+
+If load is varying, input transition will also vary for buffers at each level.
+
+So, we have varying input transition and varying output load for any buffer.
+
+So, problem here is that we will have the variety of delays. How to capture that?
+
+The solution is **Delay tables.** and the delay tables become the **Timing model** of a particular buffer of a particular size, vt (threshold voltage).
+
+![image](https://github.com/user-attachments/assets/3ec3c878-5899-4c87-b339-457b7c399ffc)
+
+# <h3 id="header-3-1-5"> 5. Delay table usage Part 1 </h3>
+
+CBUF'1' = Clock buffer of size 1.
+
+![image](https://github.com/user-attachments/assets/ee09f76d-f18d-44fc-985d-755f718b1f25)
+
+Example with some real values:
+
+Those delay values whose values are not present in the table, those are **extrapolated based on the given data in the table**.
+
+![image](https://github.com/user-attachments/assets/6dc2d86d-5183-4a4d-8128-614d5d6c9408)
+
+Lets say the delay for **CBUF'1' came out to be x9'** [some value between x9 and x10 obtained after extrapolation].
+
+
+# <h3 id="header-3-1-6"> 6. Delay table usage Part 2 </h3>
+
+![image](https://github.com/user-attachments/assets/31725b3f-ef4b-4d59-9229-e99b15ffb0de)
+
+Now, we need to calculate the **latency** from the input of buffer 1 to the point it is reaching the input of the flip-flops.
+
+Let us ignore the wire delay for now.
+
+For all the 4 paths to the flip flop, **the delay/latency is x9'+y15**. 
+
+So the **skew at any of the four inputs to flip flops is 0**.
+
+![image](https://github.com/user-attachments/assets/3b72c4e3-f897-4dd9-89e4-c6dd3d6facd9)
+
+If at every level, each node won't be driving the same load, then we would have got a **non-zero skew value.** That's why, it is always preferred that each node driving the same load at every level.
+
+**Power aware CTS**: For some time frame, some flops are not active, or are active only under certain conditions. So that section of the chip has got some special functionality that will turn on only under certain conditions. So, in that case we need to propagate the clock tree and stop it at 2 itself. That is how **we can obtain a Power Aware Clock Tree.**
+
+![image](https://github.com/user-attachments/assets/67bebaf4-3208-46c9-a37d-9dafb782a17e)
+
+
+# <h3 id="header-3-1-7"> 7. Lab steps to configure synthesis settings to fix slack and include vsdinv </h3>
+
+![image](https://github.com/user-attachments/assets/d8dfb63a-e71c-4f7f-b4b5-34ee624b69a1)
+
+**We are changing some of the switches and rerunning synthesis to see if we can get some reduced slack.**
+
+![image](https://github.com/user-attachments/assets/94a030ed-c0ba-4922-8063-f45681b87f6f)
+
+Slack din't change for my case while in the video it got reduced significantly.
+
+![image](https://github.com/user-attachments/assets/82a72cbd-919a-4206-a851-745c0a338e1b)
+
+**Tried again from the start from the design preparation stage:**
+
+![image](https://github.com/user-attachments/assets/3cfb5885-56e2-4240-9cdc-29d2c485a91c)
+
+![image](https://github.com/user-attachments/assets/0bbc8886-d01f-4301-a81d-265433f69d3b)
+
+Now, **chip area got increased and tns and wns became 0**:
+
+![image](https://github.com/user-attachments/assets/e69a59f9-6b34-41d3-a8b9-796ad027214d)
+
+**Timing report is showing no paths found**.
+
+![image](https://github.com/user-attachments/assets/b9efb7ac-7bef-4217-8581-78cf121e78e3)
+
+Now, we will **run_floorplan:**
+
+floorplan failed:
+
+![image](https://github.com/user-attachments/assets/0deef31d-04d7-4c1d-96b1-7db2edadbbab)
+
+Error shows that there are no macros in the design, so we should skip this macro step.
+
+Instead of running run_floorplan cmd, we can break the cmd wrapper to its atomic cmds, which as per floorplan.tcl is as below:
+
+init_floorplan
+
+place_io
+
+global_placement_or
+
+tap_decap_or
+
+![image](https://github.com/user-attachments/assets/9d373594-ecc3-49b7-b25b-5c8b2b1be9bf)
+
+![image](https://github.com/user-attachments/assets/05c61180-7c54-488a-8568-99e5fa32c4e3)
+
+![image](https://github.com/user-attachments/assets/b166ccb5-86b4-49ea-8314-ccb6fce222f3)
+
+![image](https://github.com/user-attachments/assets/a0beafe1-f381-45ff-9845-03d8f3692414)
+
+Also, checked the **merged.lef and our custom cell is present there**.
+
+![image](https://github.com/user-attachments/assets/ae1ac620-aaad-40af-9516-abe5a0c783e6)
+
+Now, we will **run_placement:**
+
+![image](https://github.com/user-attachments/assets/44ca89d5-6fbf-4878-9ee2-893146005009)
+
+Now, we will check our custom cell in the placement:
+
+![image](https://github.com/user-attachments/assets/3470e03e-cb05-4fe3-93c2-54c42cdc25e0)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
