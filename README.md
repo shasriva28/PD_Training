@@ -1586,7 +1586,46 @@ New verilog file will get created in synthesis.
 
 # <h3 id="header-3-4-1"> Setup timing analysis using real clocks </h3>
 
+**Setup Timing Analysis**:
+
+![image](https://github.com/user-attachments/assets/834dd105-839a-4553-bfd1-2e728331375c)
+
+![image](https://github.com/user-attachments/assets/6a43208e-9d00-4674-84a6-85cd28b6b143)
+
+![image](https://github.com/user-attachments/assets/6e4afabc-7431-4382-a4f8-9f94c33e2a62)
+
+![image](https://github.com/user-attachments/assets/fc1d7790-284d-430e-be9b-2fd1718829fd)
+
+**If the slack is negative, we call it as violation**.
+
 # <h3 id="header-3-4-2"> Hold timing analysis using real clocks </h3>
+
+**Hold Timing Analysis**
+
+![image](https://github.com/user-attachments/assets/59b85f46-8bdd-4b46-978b-8d8a715243b8)
+
+![image](https://github.com/user-attachments/assets/d972e735-0eba-4576-bf7d-6595e13fc721)
+
+![image](https://github.com/user-attachments/assets/b5c29222-fc03-413e-bde5-f0d86057bb38)
+
+![image](https://github.com/user-attachments/assets/70d641f3-c198-43c1-a869-eb41ee4057c7)
+
+Here, uncertainity dosen't play a role much because the same clock edge is going to both the flops so amount of jitter that will play a role for launch flop and the capture flop will be same.
+
+![image](https://github.com/user-attachments/assets/eb64341d-c0e0-4615-85bb-b45da2ef0b3c)
+
+**HU = Hold uncertainity**
+
+![image](https://github.com/user-attachments/assets/ce1aee81-e1bf-4ff7-a0dd-4ec849257237)
+
+![image](https://github.com/user-attachments/assets/437490c6-6d93-4602-b4ab-accaaf6a9558)
+
+![image](https://github.com/user-attachments/assets/b78cd7fb-da90-4578-8c35-6198dbab7a8b)
+
+![image](https://github.com/user-attachments/assets/0262e3be-dfb1-4aed-88bf-904cecc7a5c4)
+
+![image](https://github.com/user-attachments/assets/9a1247d4-3057-408d-afc7-dc7809e73036)
+
 # <h3 id="header-3-4-3"> Lab steps to analyze timing with real clocks using OpenSTA </h3>
 # <h3 id="header-3-4-4"> Lab steps to execute OpenSTA with right timing libraries and CTS assignment </h3>
 # <h3 id="header-3-4-5"> Lab steps to observe impact of bigger CTS buffers on setup and hold timing </h3>
