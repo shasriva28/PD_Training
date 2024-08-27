@@ -1578,7 +1578,13 @@ Verified the new netlist by searching the buffer that we have made as buf_4:
 
 ![image](https://github.com/user-attachments/assets/72eafe99-32ee-4a7c-8ca1-2cf3b320ccf5)
 
-Then we will **run_floorplan** again and then **run_cts**.
+Then we will **run_floorplan** and **run_placement** again and then **run_cts**.
+
+![image](https://github.com/user-attachments/assets/1bb1a003-fd5a-42b6-9c09-e8bc24cdc781)
+
+![image](https://github.com/user-attachments/assets/c3bb3505-1f93-491b-91cd-94e4664a97d0)
+
+
 
 New verilog file will get created in synthesis.
 
