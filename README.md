@@ -179,6 +179,53 @@
 	</ul>
 </div>
 
+<div class="toc">
+	<ul>
+    		<li><a href="#header-4"> DAY 5 </a></li>
+      <ul>
+        		<li><a href="#header-4-1"> Routing and Design Rule check (DRC) </a></li>
+	      <ul>
+        		<li><a href="#header-4-1-1"> Introduction to Maze routing </a></li>
+ 		</ul>
+	      <ul>
+        		<li><a href="#header-4-1-2"> Lee Algorithm conclusion </a></li>
+ 		</ul>
+	      <ul>
+        		<li><a href="#header-4-1-3"> Design Rule Check </a></li>
+ 		</ul>
+ 		</ul>
+   <ul>
+        		<li><a href="#header-4-2"> Power Distribution Network and Routing </a></li>
+	      <ul>
+        		<li><a href="#header-4-2-1"> Lab steps to build power distribution network </a></li>
+ 		</ul>
+	      <ul>
+        		<li><a href="#header-4-2-2"> Lab steps from power straps to std cell power </a></li>
+ 		</ul>
+	      <ul>
+        		<li><a href="#header-4-2-3"> Basics of global and detail routing and configure TritonRoute </a></li>
+ 		</ul>
+ 		</ul>
+      
+   <ul>
+        		<li><a href="#header-4-3"> TritonRoute Features </a></li>
+	      <ul>
+        		<li><a href="#header-4-3-1"> TritonRoute feature 1 - Honors pre-processed route guides </a></li>
+ 		</ul>
+	      <ul>
+        		<li><a href="#header-4-3-2"> TritonRoute Feature2 & 3 - Inter-guide connectivity and intra- & inter-layer routing </a></li>
+ 		</ul>
+	      <ul>
+        		<li><a href="#header-4-3-3"> TritonRoute method to handle connectivity </a></li>
+ 		</ul>
+	   <ul>
+        		<li><a href="#header-4-3-4"> Routing topology algorithm and final files list post-route </a></li>
+ 		</ul>
+ 		</ul>
+ </ul>
+</div>
+
+
 
 # <h1 id="header-0"> DAY 1 </h1>
 # <h2 id="header-0-1"> OpenLANE directory structure  </h2>
@@ -1700,6 +1747,31 @@ Now, we again need to create a db like we did earlier.
 ![image](https://github.com/user-attachments/assets/7395c666-982e-4540-a44b-77e1cc32b893)
 
 ![image](https://github.com/user-attachments/assets/59eede28-4e9f-483a-9e4d-8a196d30dc64)
+
+# <h1 id="header-4"> DAY 5 </h1>
+
+# <h2 id="header-4-1">  Routing and Design Rule check (DRC) </h2>
+
+# <h3 id="header-4-1-1"> Introduction to Maze routing </h3>
+# <h3 id="header-4-1-2"> Lee Algorithm conclusion </h3>
+# <h3 id="header-4-1-3"> Design Rule Check </h3>
+
+# <h2 id="header-4-2"> Power Distribution Network and Routing  </h2>
+
+# <h3 id="header-4-2-1"> Lab steps to build power distribution network </h3>
+# <h3 id="header-4-2-2"> Lab steps from power straps to std cell power </h3>
+# <h3 id="header-4-2-3"> Basics of global and detail routing and configure TritonRoute </h3>
+
+# <h2 id="header-4-3"> TritonRoute Features  </h2>
+
+# <h3 id="header-4-3-1"> TritonRoute feature 1 - Honors pre-processed route guides </h3>
+# <h3 id="header-4-3-2"> TritonRoute Feature2 & 3 - Inter-guide connectivity and intra- & inter-layer routing </h3>
+# <h3 id="header-4-3-3"> TritonRoute method to handle connectivity </h3>
+# <h3 id="header-4-3-4"> Routing topology algorithm and final files list post-route </h3>
+
+
+
+
 
 
 
