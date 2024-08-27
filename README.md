@@ -1584,9 +1584,7 @@ Then we will **run_floorplan** and **run_placement** again and then **run_cts**.
 
 ![image](https://github.com/user-attachments/assets/c3bb3505-1f93-491b-91cd-94e4664a97d0)
 
-
-
-New verilog file will get created in synthesis.
+New verilog file created with CTS done - clock path & buffers
 
 # <h2 id="header-3-4"> Timing analysis with real clocks using openSTA </h2>
 
@@ -1633,8 +1631,79 @@ Here, uncertainity dosen't play a role much because the same clock edge is going
 ![image](https://github.com/user-attachments/assets/9a1247d4-3057-408d-afc7-dc7809e73036)
 
 # <h3 id="header-3-4-3"> Lab steps to analyze timing with real clocks using OpenSTA </h3>
+
+Now our objective is to do the analysis of the clock tree of the entire ckt as the clock tree has been built.
+
+Now we will invoke openroad in openlane itself instead of opening opensta separately for doing static timing analysis.
+
+OpenSTA is already integrated in Openroad.
+
+![image](https://github.com/user-attachments/assets/c7dc1c60-19d5-48a4-b57f-bb155b02d629)
+
+Now we need to create a db. db is created from a lef and def file.
+
+**read_lef**
+
+![image](https://github.com/user-attachments/assets/8efdc1bc-cb27-4aa7-a8b1-7b026a6ea90b)
+
+similarly, do **read_def** <def file after cts location (results/cts)>
+
+Then, do **write_db <any_custom_name>**
+
+ex: **write_db pico_cts.db**
+
+![image](https://github.com/user-attachments/assets/bc204dee-14ca-4b0b-8bbb-69e2c55fdc29)
+
+Verified that the **db got created in the openlane dir**.
+
+Then **read_db**
+
+![image](https://github.com/user-attachments/assets/9a95da74-57b9-40f6-84e7-f029055b51b8)
+
+Now the clocks have been built, **we can calculate the actual cell delay in the clock path using set_propagated_clock**.
+
+![image](https://github.com/user-attachments/assets/dc3c88db-e03e-46aa-8d16-cd197fc7c186)
+
+![image](https://github.com/user-attachments/assets/0b92e582-cc76-4eb8-9d38-e8667c5ff09f)
+
+![image](https://github.com/user-attachments/assets/45537bc1-1086-45f0-85c6-c07eb457f489)
+
 # <h3 id="header-3-4-4"> Lab steps to execute OpenSTA with right timing libraries and CTS assignment </h3>
+
+Now, type exit to exit from the openroad but you will still be in openlane.
+
+Exploring Post CTS analysis by removing clkbuf_1 from clock buffer list variable.
+
+![image](https://github.com/user-attachments/assets/9be904b1-483b-4933-b226-72a0955f61da)
+
+Tool always picks buffers left to right as buf 2 is greater in area than buf 1.
+
+![image](https://github.com/user-attachments/assets/eb123ea7-b8bd-4a56-b245-cd3b6d534a37)
+
+![image](https://github.com/user-attachments/assets/5c69b5cc-e92b-4a9f-86e4-c48ff5c0b225)
+
+
 # <h3 id="header-3-4-5"> Lab steps to observe impact of bigger CTS buffers on setup and hold timing </h3>
+
+Now, we again need to create a db like we did earlier.
+
+![image](https://github.com/user-attachments/assets/9739c8fc-7c9f-497e-969f-5b135303cf20)
+
+![image](https://github.com/user-attachments/assets/d02a435a-896a-492d-a167-4d04db20e15e)
+
+![image](https://github.com/user-attachments/assets/af40e0a8-2477-4e00-a38e-304612123e0e)
+
+**Slack slightly improved at cost of area**.
+
+![image](https://github.com/user-attachments/assets/b1557896-50bd-4cdd-bd96-a145e2b58ab2)
+
+![image](https://github.com/user-attachments/assets/7395c666-982e-4540-a44b-77e1cc32b893)
+
+![image](https://github.com/user-attachments/assets/59eede28-4e9f-483a-9e4d-8a196d30dc64)
+
+
+
+
 
 
 
