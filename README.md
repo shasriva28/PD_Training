@@ -185,7 +185,7 @@
       <ul>
         		<li><a href="#header-4-1"> Routing and Design Rule check (DRC) </a></li>
 	      <ul>
-        		<li><a href="#header-4-1-1"> Introduction to Maze routing </a></li>
+        		<li><a href="#header-4-1-1"> Introduction to Maze routing - Lee's Algorithm </a></li>
  		</ul>
 	      <ul>
         		<li><a href="#header-4-1-2"> Lee Algorithm conclusion </a></li>
@@ -1752,22 +1752,172 @@ Now, we again need to create a db like we did earlier.
 
 # <h2 id="header-4-1">  Routing and Design Rule check (DRC) </h2>
 
-# <h3 id="header-4-1-1"> Introduction to Maze routing </h3>
+# <h3 id="header-4-1-1"> Introduction to Maze routing - Lee's Algorithm </h3>
+
+![image](https://github.com/user-attachments/assets/d72bc88c-76ab-4c78-9680-4e9e134772a0)
+
+When we say routing, means we need to connect 2 points with the best possible path, shortest possible path with less number of zig-zag lines, most of them should be L-shaped, there should be few with z-shaped and very few zig-zag lines.
+
+![image](https://github.com/user-attachments/assets/af367be4-bd87-40b9-98dc-c2fd24659804)
+
+**Lee's algorithm:**
+
+First the **routing grid** will be created at the backend.
+
+And the two points get created those are Source (S) and Target (T):
+
+Algorithm labels the abjacent grids around S (Source). First adjacent grids are labelled as 1 and then around 1 as 2, then around 2 as 3 and so on till it reaches T (Target).
+
+![image](https://github.com/user-attachments/assets/57038041-6870-4c47-9d31-30cbe087b563)
+
 # <h3 id="header-4-1-2"> Lee Algorithm conclusion </h3>
+
+![image](https://github.com/user-attachments/assets/c30524da-7e5b-49f4-a8ed-194f92ce0714)
+
+Multiple paths are possible based on the numbering, we have to select the most optimum path.
+
+![image](https://github.com/user-attachments/assets/05d39d3b-8ed5-49de-828d-71f27afcad79)
+
+**Two bends** are there in the above path.
+
+![image](https://github.com/user-attachments/assets/9952c483-2fd1-4caa-8882-1932a062ad58)
+
+**Single bend** is there in the above path. So, this path will be preferred for routing S and T.
+
+Limitations of Lee's algorithm:
+
+1. Consumes a lot of time because lot of information needs to be stored.
+
+2. Consumes huge memory.
+
+
+
 # <h3 id="header-4-1-3"> Design Rule Check </h3>
+
+There are some rules to do a proper routing and those are called as Design Rule Check (DRC).
+
+![image](https://github.com/user-attachments/assets/68f4cdb6-a678-40c6-b4a1-1e00c3269ea8)
+
+![image](https://github.com/user-attachments/assets/390ad14d-1151-4caa-bb65-e27fe0b90329)
+
+![image](https://github.com/user-attachments/assets/18ae733b-9cba-41e6-8aa8-0b63c3722033)
+
+![image](https://github.com/user-attachments/assets/ac395bcd-afd8-4c64-ae93-bceec643f9cc)
+
+How to solve this issue of signal shorts?
+
+Use different layers for routing of those 2 wires:
+
+![image](https://github.com/user-attachments/assets/c730cb17-918d-4dc3-ab54-7a9bba6cb1b7)
+
+![image](https://github.com/user-attachments/assets/2fb8e6b6-8185-4440-935e-bf0b00690d08)
+
+![image](https://github.com/user-attachments/assets/90dc91f9-25bb-4a99-85cf-fe13eff2207b)
+
+![image](https://github.com/user-attachments/assets/10ef1b99-bee9-4b1c-9c4b-0190492b7539)
+
+**Parasitics extraction:**
+
+![image](https://github.com/user-attachments/assets/a2ccc8ec-b205-4cfd-ad62-31b4603d0176)
+
 
 # <h2 id="header-4-2"> Power Distribution Network and Routing  </h2>
 
 # <h3 id="header-4-2-1"> Lab steps to build power distribution network </h3>
+
+![image](https://github.com/user-attachments/assets/d50ba99b-528a-4370-8bce-3e740ad66975)
+
+**How to know which was the last stage we ran in the flow?**
+
+use command **echo $::env(CURRENT_DEF)** --> it will give you the location of last stage DEF that is CTS def.
+
+To run pdn, type **gen_pdn**.
+
+![image](https://github.com/user-attachments/assets/90b5f1af-c462-4d0f-93fb-67da2c566427)
+
+![image](https://github.com/user-attachments/assets/c7027d21-c897-4737-8b6e-8d2a826012ce)
+
+![image](https://github.com/user-attachments/assets/e85b018f-ed77-4d56-bd93-5d5b1512ec0c)
+
+![image](https://github.com/user-attachments/assets/27c6e7ba-480a-4f47-bbb3-9cc69c62c5f8)
+
+
 # <h3 id="header-4-2-2"> Lab steps from power straps to std cell power </h3>
+
+![image](https://github.com/user-attachments/assets/0c7b6385-c1a7-46b5-9fc5-d3906dc4c980)
+
+![image](https://github.com/user-attachments/assets/7cc62c64-ae16-4785-affc-2c18e6ea1dd3)
+
+
 # <h3 id="header-4-2-3"> Basics of global and detail routing and configure TritonRoute </h3>
+
+**Switches available for routing:**
+
+![image](https://github.com/user-attachments/assets/0ec04dae-b1c3-41a2-92c5-cc65ef0f0dc3)
+
+![image](https://github.com/user-attachments/assets/5cf5a704-2e33-4101-80dd-36cf7394b423)
+
+Now, **run_routing**:
+
+![image](https://github.com/user-attachments/assets/09d93b9a-c282-45f7-9803-8fb15b679f8a)
+
+![image](https://github.com/user-attachments/assets/11708e19-c38b-4c3c-8c0a-c2e045a5a0cc)
+
+Number of violations = 0
+
+![image](https://github.com/user-attachments/assets/0b41c1fb-9e4e-4aa8-af40-a9165a46b216)
+
+Routing Using **TritonRoute**:
+
+![image](https://github.com/user-attachments/assets/e2beccf9-81cf-4f5a-9519-a4fc73a1593c)
+
+![image](https://github.com/user-attachments/assets/4d8a6aa4-f133-42d9-b1d5-16c2a9391727)
+
 
 # <h2 id="header-4-3"> TritonRoute Features  </h2>
 
 # <h3 id="header-4-3-1"> TritonRoute feature 1 - Honors pre-processed route guides </h3>
+
+![image](https://github.com/user-attachments/assets/c4ff3dfd-87bc-4c36-a5ec-d63b02dd82a2)
+
+Intra-layer means within the layer.
+
+Inter - layer means in between the layers.
+
+**Route guides are something that we obtain after global route using Fast route engine.**
+
+Output of the Fast route is Routing guide.
+
+![image](https://github.com/user-attachments/assets/b8a456a5-9545-4ea2-8fac-d651b5f59371)
+
 # <h3 id="header-4-3-2"> TritonRoute Feature2 & 3 - Inter-guide connectivity and intra- & inter-layer routing </h3>
+
+![image](https://github.com/user-attachments/assets/c245e906-1b4c-402d-a5f1-b74b3be31985)
+
+![image](https://github.com/user-attachments/assets/ba3d1e26-aada-4ad1-bd2c-082db149a9fc)
+
+**Dashed line in the below snippet is panel.**
+
+![image](https://github.com/user-attachments/assets/8ddd4124-d501-401f-981c-d17c32221198)
+
+First routing in M1 is done (will be greyed out) and then routing in M2 is done and M3 and then so on. This is **sequential routing**.
+
+![image](https://github.com/user-attachments/assets/52c1ee3d-1117-4a29-bce8-f4b2b378e15f)
+
 # <h3 id="header-4-3-3"> TritonRoute method to handle connectivity </h3>
+
+**TritonRoute --> when the detailed route is happened, below are the inputs:**
+
+![image](https://github.com/user-attachments/assets/1cc7c813-1ec6-4ba8-87b9-5bb0e331d145)
+
+![image](https://github.com/user-attachments/assets/0f4724d3-7956-4fdd-add1-52bbf705cce5)
+
+![image](https://github.com/user-attachments/assets/ec61346b-5088-400c-816f-640b1f38df02)
+
+
 # <h3 id="header-4-3-4"> Routing topology algorithm and final files list post-route </h3>
+
+
 
 
 
