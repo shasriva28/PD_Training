@@ -1917,6 +1917,26 @@ First routing in M1 is done (will be greyed out) and then routing in M2 is done 
 
 # <h3 id="header-4-3-4"> Routing topology algorithm and final files list post-route </h3>
 
+![image](https://github.com/user-attachments/assets/42e0c94a-315c-445b-bac6-9d48c7f52074)
+
+![image](https://github.com/user-attachments/assets/b58e6f5c-340f-4e7a-b485-675ea2a92d4e)
+
+![image](https://github.com/user-attachments/assets/0a9aeba3-bc7f-41a2-bf48-7ab2ed374a76)
+
+![image](https://github.com/user-attachments/assets/43a6eec0-2baf-47be-8248-9ab68791316c)
+
+![image](https://github.com/user-attachments/assets/258113f4-b888-49db-bf1a-a6873a1f054c)
+
+![image](https://github.com/user-attachments/assets/5ee24713-a435-4298-b020-70e0f6fbfeb3)
+
+![image](https://github.com/user-attachments/assets/63d52c05-b5ea-4615-b0ff-afe3d2beef23)
+
+![image](https://github.com/user-attachments/assets/1369e76d-7370-4ff9-a8b5-af24f99f06fc)
+
+
+
+
+
 
 
 
